@@ -1,0 +1,1530 @@
+Level 1
+True label vs predicted label 15032-5340-FullBook.docx Level 1 Level 1
+423
+Level 1
+True label vs predicted label 15032-5341-FullBook.docx Level 1 Level 1
+424
+Level 1
+True label vs predicted label 15032-5342-FullBook.docx Level 1 Level 1
+425
+Level 1
+True label vs predicted label 15032-5344-FullBook.docx Level 1 Level 1
+426
+Level 1
+True label vs predicted label 15032-5347-FullBook.docx Level 1 Level 1
+427
+Level 1
+True label vs predicted label 15032-5348-FullBook.docx Level 1 Level 1
+428
+Level 1
+True label vs predicted label 15032-5349-FullBook.docx Level 1 Level 1
+429
+Level 2
+True label vs predicted label 15032-5350-FullBook.docx Level 1 Level 1
+430
+Level 3
+True label vs predicted label 15032-5351-FullBook.docx Level 1 Level 1
+431
+Level 2
+True label vs predicted label 15032-5352-FullBook.docx Level 1 Level 1
+432
+Level 1
+True label vs predicted label 15032-5353-FullBook.docx Level 1 Level 1
+433
+Level 1
+True label vs predicted label 15032-5354-FullBook.docx Level 1 Level 1
+434
+Level 1
+True label vs predicted label 15032-5355-FullBook.docx Level 1 Level 1
+435
+Level 3
+True label vs predicted label 15032-5356-FullBook.docx Level 1 Level 1
+436
+Level 2
+True label vs predicted label 15032-5359-FullBook.docx Level 1 Level 2
+437
+Level 2
+True label vs predicted label 15032-5360-FullBook.docx Level 1 Level 2
+438
+Level 1
+True label vs predicted label 15032-5363-FullBook.docx Level 1 Level 1
+439
+Level 2
+True label vs predicted label 15032-5364-FullBook.docx Level 1 Level 1
+440
+Level 2
+True label vs predicted label 15032-5366-FullBook.docx Level 1 Level 1
+441
+Level 1
+True label vs predicted label 15032-5367-FullBook.docx Level 1 Level 1
+442
+Level 2
+True label vs predicted label 15032-5368-FullBook.docx Level 1 Level 1
+443
+Level 1
+True label vs predicted label 15032-5369-FullBook.docx Level 1 Level 1
+444
+Level 2
+True label vs predicted label 15032-5373-FullBook.docx Level 1 Level 1
+445
+Level 1
+True label vs predicted label 15032-5374-FullBook.docx Level 1 Level 1
+446
+Level 1
+True label vs predicted label 15032-5375-FullBook.docx Level 1 Level 1
+447
+Level 1
+True label vs predicted label 15032-5376-FullBook.docx Level 1 Level 1
+448
+Level 2
+True label vs predicted label 15032-5377-FullBook.docx Level 1 Level 1
+449
+Level 2
+True label vs predicted label 15032-5378-FullBook.docx Level 1 Level 2
+450
+Level 2
+True label vs predicted label 15032-5379-FullBook.docx Level 1 Level 1
+451
+Level 1
+True label vs predicted label 15032-5381-FullBook.docx Level 1 Level 1
+452
+Level 2
+True label vs predicted label 15032-5382-FullBook.docx Level 1 Level 1
+453
+Level 3
+True label vs predicted label 15032-5383-FullBook.docx Level 1 Level 1
+454
+Level 2
+True label vs predicted label 15032-5384-FullBook.docx Level 1 Level 1
+455
+Level 1
+True label vs predicted label 15032-5385-FullBook.docx Level 1 Level 2
+456
+Level 2
+True label vs predicted label 15032-5386-FullBook.docx Level 1 Level 1
+457
+Level 2
+True label vs predicted label 15032-5387-FullBook.docx Level 1 Level 2
+458
+Level 2
+True label vs predicted label 15032-5389-FullBook.docx Level 1 Level 1
+459
+Level 2
+True label vs predicted label 15032-5390-FullBook.docx Level 1 Level 2
+460
+Level 1
+True label vs predicted label 15032-5391-FullBook.docx Level 1 Level 1
+461
+Level 1
+True label vs predicted label 15032-5392-FullBook.docx Level 1 Level 1
+462
+Level 1
+True label vs predicted label 15032-5393-FullBook.docx Level 1 Level 1
+463
+Level 1
+True label vs predicted label 15032-5394-FullBook.docx Level 1 Level 1
+464
+Level 1
+True label vs predicted label 15032-5395-FullBook.docx Level 1 Level 1
+465
+Level 2
+True label vs predicted label 15032-5396-FullBook.docx Level 1 Level 1
+466
+Level 2
+True label vs predicted label 15032-5397-FullBook.docx Level 1 Level 2
+467
+Level 1
+True label vs predicted label 15032-5399-FullBook.docx Level 1 Level 1
+468
+Level 1
+True label vs predicted label 15032-5400-FullBook.docx Level 1 Level 1
+469
+Level 2
+True label vs predicted label 15032-5401-FullBook.docx Level 1 Level 1
+470
+Level 1
+True label vs predicted label 15032-5402-FullBook.docx Level 1 Level 1
+471
+Level 1
+True label vs predicted label 15032-5403-FullBook.docx Level 1 Level 1
+472
+Level 1
+True label vs predicted label 15032-5404-FullBook.docx Level 1 Level 1
+473
+Level 1
+True label vs predicted label 15032-5405-FullBook.docx Level 1 Level 1
+474
+Level 2
+True label vs predicted label 15032-5406-FullBook.docx Level 1 Level 1
+475
+Level 1
+True label vs predicted label 15032-5407-FullBook.docx Level 1 Level 1
+476
+Level 2
+True label vs predicted label 15032-5408-FullBook.docx Level 1 Level 1
+477
+Level 2
+True label vs predicted label 15032-5410-FullBook.docx Level 1 Level 1
+478
+Level 2
+True label vs predicted label 15032-5411-FullBook.docx Level 1 Level 1
+479
+Level 1
+True label vs predicted label 15032-5412-FullBook.docx Level 1 Level 1
+480
+Level 2
+True label vs predicted label 15032-5413-FullBook.docx Level 1 Level 1
+481
+Level 1
+True label vs predicted label 15032-5414-FullBook.docx Level 1 Level 1
+482
+Level 1
+True label vs predicted label 15032-5415-FullBook.docx Level 1 Level 2
+483
+Level 2
+True label vs predicted label 15032-5416-FullBook.docx Level 1 Level 2
+484
+Level 1
+True label vs predicted label 15032-5417-FullBook.docx Level 1 Level 1
+485
+Level 2
+True label vs predicted label 15032-5418-FullBook.docx Level 1 Level 1
+486
+Level 1
+True label vs predicted label 15032-5419-FullBook.docx Level 1 Level 1
+487
+Level 1
+True label vs predicted label 15032-5422-FullBook.docx Level 1 Level 1
+488
+Level 1
+True label vs predicted label 15032-5423-FullBook.docx Level 1 Level 1
+489
+Level 1
+True label vs predicted label 15032-5425-FullBook.docx Level 1 Level 2
+490
+Level 1
+True label vs predicted label 15032-5427-FullBook.docx Level 1 Level 1
+491
+Level 1
+True label vs predicted label 15032-5428-FullBook.docx Level 1 Level 2
+492
+Level 2
+True label vs predicted label 15032-5429-FullBook.docx Level 1 Level 1
+493
+Level 1
+True label vs predicted label 15032-5430-FullBook.docx Level 1 Level 1
+494
+Level 2
+True label vs predicted label 15032-5431-FullBook.docx Level 1 Level 2
+495
+Level 1
+True label vs predicted label 15032-5432-FullBook.docx Level 1 Level 2
+496
+Level 1
+True label vs predicted label 15032-5433-FullBook.docx Level 1 Level 2
+497
+Level 1
+True label vs predicted label 15032-5434-FullBook.docx Level 1 Level 1
+498
+Level 1
+True label vs predicted label 15032-5435-FullBook.docx Level 1 Level 1
+499
+Level 1
+True label vs predicted label 15032-5436-FullBook.docx Level 1 Level 1
+500
+Level 1
+True label vs predicted label 15032-5439-FullBook.docx Level 1 Level 1
+501
+Level 1
+True label vs predicted label 15032-5440-FullBook.docx Level 1 Level 1
+502
+Level 1
+True label vs predicted label 15032-5441-FullBook.docx Level 1 Level 1
+503
+Level 1
+True label vs predicted label 15032-5442-FullBook.docx Level 1 Level 1
+504
+Level 2
+True label vs predicted label 15032-5443-FullBook.docx Level 1 Level 1
+505
+Level 1
+True label vs predicted label 15032-5445-FullBook.docx Level 1 Level 1
+506
+Level 2
+True label vs predicted label 15032-5446-FullBook.docx Level 1 Level 1
+507
+Level 2
+True label vs predicted label 15032-5450-FullBook.docx Level 1 Level 1
+508
+Level 1
+True label vs predicted label 15032-5451-FullBook.docx Level 1 Level 1
+509
+Level 3
+True label vs predicted label 15032-5453-FullBook.docx Level 1 Level 1
+510
+Level 1
+True label vs predicted label 15032-5454-FullBook.docx Level 1 Level 1
+511
+Level 3
+True label vs predicted label 15032-5455-FullBook.docx Level 1 Level 1
+512
+Level 2
+True label vs predicted label 15032-5456-FullBook.docx Level 1 Level 1
+513
+Level 1
+True label vs predicted label 15032-5457-FullBook.docx Level 1 Level 1
+514
+Level 1
+True label vs predicted label 15032-5458-FullBook.docx Level 1 Level 1
+515
+Level 1
+True label vs predicted label 15032-5460-FullBook.docx Level 1 Level 1
+516
+Level 1
+True label vs predicted label 15032-5461-FullBook.docx Level 1 Level 1
+517
+Level 1
+True label vs predicted label 15032-5462-FullBook.docx Level 1 Level 1
+518
+Level 1
+True label vs predicted label 15032-5464-FullBook.docx Level 1 Level 1
+519
+Level 1
+True label vs predicted label 15032-5465-FullBook.docx Level 1 Level 1
+520
+Level 2
+True label vs predicted label 15032-5467-FullBook.docx Level 1 Level 1
+521
+Level 1
+True label vs predicted label 15032-5469-FullBook.docx Level 1 Level 1
+522
+Level 1
+True label vs predicted label 15032-5470-FullBook.docx Level 1 Level 1
+523
+Level 2
+True label vs predicted label 15032-5472-FullBook.docx Level 1 Level 2
+524
+Level 2
+True label vs predicted label 15032-5473-FullBook.docx Level 1 Level 2
+525
+Level 2
+True label vs predicted label 15032-5475-FullBook.docx Level 1 Level 1
+526
+Level 3
+True label vs predicted label 15032-5477-FullBook.docx Level 1 Level 1
+527
+Level 2
+True label vs predicted label 15032-5478-FullBook.docx Level 1 Level 2
+528
+Level 3
+True label vs predicted label 15032-5479-FullBook.docx Level 1 Level 1
+529
+Level 2
+True label vs predicted label 15032-5480-FullBook.docx Level 1 Level 1
+530
+Level 1
+True label vs predicted label 15032-5482-FullBook.docx Level 1 Level 1
+531
+Level 2
+True label vs predicted label 15032-5483-FullBook.docx Level 1 Level 1
+532
+Level 1
+True label vs predicted label 15032-5484-FullBook.docx Level 1 Level 1
+533
+Level 1
+True label vs predicted label 15032-5485-FullBook.docx Level 1 Level 1
+534
+Level 1
+True label vs predicted label 15032-5486-FullBook.docx Level 1 Level 1
+535
+Level 1
+True label vs predicted label 15032-5487-FullBook.docx Level 1 Level 1
+536
+Level 1
+True label vs predicted label 15032-5489-FullBook.docx Level 1 Level 3
+537
+Level 1
+True label vs predicted label 15032-5491-FullBook.docx Level 1 Level 1
+538
+Level 1
+True label vs predicted label 15032-5494-FullBook.docx Level 1 Level 1
+539
+Level 1
+True label vs predicted label 15032-5495-FullBook.docx Level 1 Level 1
+540
+Level 1
+True label vs predicted label 15032-5496-FullBook.docx Level 1 Level 1
+541
+Level 2
+True label vs predicted label 15032-5497-FullBook.docx Level 1 Level 1
+542
+Level 1
+True label vs predicted label 15032-5498-FullBook.docx Level 1 Level 1
+543
+Level 1
+True label vs predicted label 15032-5499-FullBook.docx Level 1 Level 3
+544
+Level 1
+True label vs predicted label 15032-5500-FullBook.docx Level 1 Level 1
+545
+Level 1
+True label vs predicted label 15032-5501-FullBook.docx Level 1 Level 1
+546
+Level 2
+True label vs predicted label 15032-5502-FullBook.docx Level 1 Level 1
+547
+Level 3
+True label vs predicted label 15032-5503-FullBook.docx Level 1 Level 2
+548
+Level 1
+True label vs predicted label 15032-5504-FullBook.docx Level 1 Level 2
+549
+Level 1
+True label vs predicted label 15032-5505-FullBook.docx Level 1 Level 1
+550
+Level 1
+True label vs predicted label 15032-5506-FullBook.docx Level 1 Level 1
+551
+Level 1
+True label vs predicted label 15032-5508-FullBook.docx Level 1 Level 1
+552
+Level 1
+True label vs predicted label 15032-5510-FullBook.docx Level 1 Level 1
+553
+Level 1
+True label vs predicted label 15032-5513-FullBook.docx Level 1 Level 1
+554
+Level 1
+True label vs predicted label 15032-5515-FullBook.docx Level 1 Level 1
+555
+Level 1
+True label vs predicted label 15032-5516-FullBook.docx Level 1 Level 1
+556
+Level 2
+True label vs predicted label 15032-5517-FullBook.docx Level 1 Level 1
+557
+Level 1
+True label vs predicted label 15032-5518-FullBook.docx Level 1 Level 1
+558
+Level 1
+True label vs predicted label 15032-5521-FullBook.docx Level 1 Level 1
+559
+Level 1
+True label vs predicted label 15032-5522-FullBook.docx Level 1 Level 1
+560
+Level 2
+True label vs predicted label 15032-5523-FullBook.docx Level 1 Level 1
+561
+Level 1
+True label vs predicted label 15032-5524-FullBook.docx Level 1 Level 1
+562
+Level 1
+True label vs predicted label 15032-5525-FullBook.docx Level 1 Level 2
+563
+Level 1
+True label vs predicted label 15032-5526-FullBook.docx Level 1 Level 1
+564
+Level 1
+True label vs predicted label 15032-5527-FullBook.docx Level 1 Level 1
+565
+Level 1
+True label vs predicted label 15032-5528-FullBook.docx Level 1 Level 1
+566
+Level 1
+True label vs predicted label 15032-5529-FullBook.docx Level 1 Level 1
+567
+Level 1
+True label vs predicted label 15032-5530-FullBook.docx Level 1 Level 1
+568
+Level 1
+True label vs predicted label 15032-5531-FullBook.docx Level 1 Level 1
+569
+Level 1
+True label vs predicted label 15032-5532-FullBook.docx Level 1 Level 1
+570
+Level 1
+True label vs predicted label 15032-5534-FullBook.docx Level 1 Level 1
+571
+Level 1
+True label vs predicted label 15032-5535-FullBook.docx Level 1 Level 1
+572
+Level 1
+True label vs predicted label 15032-5537-FullBook.docx Level 1 Level 1
+573
+Level 1
+True label vs predicted label 15032-5539-FullBook.docx Level 1 Level 2
+574
+Level 1
+True label vs predicted label 15032-5540-FullBook.docx Level 1 Level 1
+575
+Level 1
+True label vs predicted label 15032-5542-FullBook.docx Level 1 Level 1
+576
+Level 1
+True label vs predicted label 15032-5543-FullBook.docx Level 1 Level 1
+577
+Level 1
+True label vs predicted label 15032-5544-FullBook.docx Level 1 Level 1
+578
+Level 1
+True label vs predicted label 15032-5546-FullBook.docx Level 1 Level 1
+579
+Level 1
+True label vs predicted label 15032-5547-FullBook.docx Level 1 Level 1
+580
+Level 1
+True label vs predicted label 15032-5548-FullBook.docx Level 1 Level 1
+581
+Level 2
+True label vs predicted label 15032-5549-FullBook.docx Level 1 Level 1
+582
+Level 1
+True label vs predicted label 15032-5550-FullBook.docx Level 1 Level 1
+583
+Level 3
+True label vs predicted label 15032-5551-FullBook.docx Level 1 Level 1
+584
+Level 1
+True label vs predicted label 15032-5553-FullBook.docx Level 1 Level 1
+585
+Level 1
+True label vs predicted label 15032-5554-FullBook.docx Level 1 Level 1
+586
+Level 2
+True label vs predicted label 15032-5555-FullBook.docx Level 1 Level 1
+587
+Level 1
+True label vs predicted label 15032-5556-FullBook.docx Level 1 Level 1
+588
+Level 2
+True label vs predicted label 15032-5558-FullBook.docx Level 1 Level 1
+589
+Level 2
+True label vs predicted label 15032-5559-FullBook.docx Level 1 Level 1
+590
+Level 1
+True label vs predicted label 15032-5560-FullBook.docx Level 1 Level 1
+591
+Level 2
+True label vs predicted label 15032-5561-FullBook.docx Level 1 Level 1
+592
+Level 2
+True label vs predicted label 15032-5562-FullBook.docx Level 1 Level 1
+593
+Level 1
+True label vs predicted label 15032-5563-FullBook.docx Level 1 Level 1
+594
+Level 1
+True label vs predicted label 15032-5564-FullBook-Index.docx Level 1 Level 1
+595
+Level 2
+True label vs predicted label 15032-5565-FullBook.docx Level 1 Level 2
+596
+Level 1
+True label vs predicted label 15032-5566-FullBook.docx Level 1 Level 1
+597
+Level 1
+True label vs predicted label 15032-5567-FullBook.docx Level 1 Level 1
+598
+Level 2
+True label vs predicted label 15032-5568-FullBook.docx Level 1 Level 1
+599
+Level 1
+True label vs predicted label 15032-5569-FullBook.docx Level 1 Level 1
+600
+Level 1
+True label vs predicted label 15032-5570-FullBook.docx Level 1 Level 1
+601
+Level 2
+True label vs predicted label 15032-5571-FullBook.docx Level 1 Level 1
+602
+Level 2
+True label vs predicted label 15032-5572-FullBook.docx Level 1 Level 1
+603
+Level 1
+True label vs predicted label 15032-5574-FullBook.docx Level 1 Level 1
+604
+Level 1
+True label vs predicted label 15032-5575-FullBook.docx Level 1 Level 1
+605
+Level 2
+True label vs predicted label 15032-5576-FullBook.docx Level 1 Level 2
+606
+Level 1
+True label vs predicted label 15032-5577-FullBook.docx Level 1 Level 1
+607
+Level 1
+True label vs predicted label 15032-5578-FullBook.docx Level 1 Level 1
+608
+Level 2
+True label vs predicted label 15032-5582-FullBook.docx Level 1 Level 2
+609
+Level 1
+True label vs predicted label 15032-5583-FullBook.docx Level 1 Level 1
+610
+Level 1
+True label vs predicted label 15032-5587-FullBook.docx Level 1 Level 1
+611
+Level 1
+True label vs predicted label 15032-5588-FullBook.docx Level 1 Level 1
+612
+Level 1
+True label vs predicted label 15032-5589-FullBook.docx Level 1 Level 1
+613
+Level 1
+True label vs predicted label 15032-5590-FullBook.docx Level 1 Level 1
+614
+Level 2
+True label vs predicted label 15032-5591-FullBook.docx Level 1 Level 1
+615
+Level 2
+True label vs predicted label 15032-5592-FullBook.docx Level 1 Level 1
+616
+Level 1
+True label vs predicted label 15032-5593-FullBook.docx Level 1 Level 1
+617
+Level 2
+True label vs predicted label 15032-5594-FullBook.docx Level 1 Level 2
+618
+Level 1
+True label vs predicted label 15032-5595-FullBook.docx Level 1 Level 1
+619
+Level 1
+True label vs predicted label 15032-5596-FullBook.docx Level 1 Level 1
+620
+Level 2
+True label vs predicted label 15032-5597-FullBook.docx Level 1 Level 2
+621
+Level 1
+True label vs predicted label 15032-5598-FullBook.docx Level 1 Level 1
+622
+Level 1
+True label vs predicted label 15032-5599-FullBook.docx Level 1 Level 1
+623
+Level 1
+True label vs predicted label 15032-5600-FullBook.docx Level 1 Level 1
+624
+Level 1
+True label vs predicted label 15032-5601-FullBook.docx Level 1 Level 3
+625
+Level 1
+True label vs predicted label 15032-5603-FullBook.docx Level 1 Level 1
+626
+Level 1
+True label vs predicted label 15032-5605-FullBook.docx Level 1 Level 1
+627
+Level 2
+True label vs predicted label 15032-5606-FullBook.docx Level 1 Level 2
+628
+Level 1
+True label vs predicted label 15032-5608-FullBook.docx Level 1 Level 1
+629
+Level 1
+True label vs predicted label 15032-5609-FullBook.docx Level 1 Level 1
+630
+Level 2
+True label vs predicted label 15032-5610-FullBook.docx Level 1 Level 1
+631
+Level 1
+True label vs predicted label 15032-5611-FullBook.docx Level 1 Level 1
+632
+Level 1
+True label vs predicted label 15032-5614-FullBook.docx Level 1 Level 1
+633
+Level 1
+True label vs predicted label 15032-5619-FullBook.docx Level 1 Level 1
+634
+Level 1
+True label vs predicted label 15032-5620-FullBook.docx Level 1 Level 1
+635
+Level 1
+True label vs predicted label 15032-5622-FullBook.docx Level 1 Level 1
+636
+Level 1
+True label vs predicted label 15032-5623-FullBook.docx Level 1 Level 1
+637
+Level 2
+True label vs predicted label 15032-5625-FullBook.docx Level 1 Level 1
+638
+Level 1
+True label vs predicted label 15032-5626-FullBook.docx Level 1 Level 1
+639
+Level 2
+True label vs predicted label 15032-5628-FullBook.docx Level 1 Level 2
+640
+Level 3
+True label vs predicted label 15032-5630-FullBook.docx Level 1 Level 1
+641
+Level 3
+True label vs predicted label 15032-5632-FullBook.docx Level 1 Level 1
+642
+Level 1
+True label vs predicted label 15032-5634-FullBook.docx Level 1 Level 1
+643
+Level 1
+True label vs predicted label 15032-5635-FullBook.docx Level 1 Level 1
+644
+Level 1
+True label vs predicted label 15032-5636-FullBook.docx Level 1 Level 2
+645
+Level 1
+True label vs predicted label 15032-5639-FullBook.docx Level 1 Level 1
+646
+Level 1
+True label vs predicted label 15032-5642-FullBook.docx Level 1 Level 1
+647
+Level 1
+True label vs predicted label 15032-5644-FullBook.docx Level 1 Level 1
+648
+Level 1
+True label vs predicted label 15032-5646-FullBook.docx Level 1 Level 1
+649
+Level 2
+True label vs predicted label 15032-5649-FullBook.docx Level 1 Level 1
+650
+Level 3
+True label vs predicted label 15032-5650-FullBook.docx Level 1 Level 2
+651
+Level 3
+True label vs predicted label 15032-5651-FullBook.docx Level 1 Level 1
+652
+Level 1
+True label vs predicted label 15032-5652-FullBook.docx Level 1 Level 1
+653
+Level 1
+True label vs predicted label 15032-5653-FullBook.docx Level 1 Level 1
+654
+Level 2
+True label vs predicted label 15032-5655-FullBook.docx Level 1 Level 1
+655
+Level 1
+True label vs predicted label 15032-5656-FullBook.docx Level 1 Level 1
+656
+Level 1
+True label vs predicted label 15032-5657-FullBook.docx Level 1 Level 1
+657
+Level 1
+True label vs predicted label 15032-5658-FullBook.docx Level 1 Level 2
+658
+Level 1
+True label vs predicted label 15032-5659-FullBook.docx Level 1 Level 2
+659
+Level 1
+True label vs predicted label 15032-5660-FullBook.docx Level 1 Level 1
+660
+Level 1
+True label vs predicted label 15032-5661-FullBook.docx Level 1 Level 1
+661
+Level 1
+True label vs predicted label 15032-5663-FullBook.docx Level 1 Level 1
+662
+Level 2
+True label vs predicted label 15032-5664-FullBook.docx Level 1 Level 1
+663
+Level 1
+True label vs predicted label 15032-5665-FullBook.docx Level 1 Level 1
+664
+Level 1
+True label vs predicted label 15032-5666-FullBook.docx Level 1 Level 1
+665
+Level 1
+True label vs predicted label 15032-5667-FullBook.docx Level 1 Level 1
+666
+Level 1
+True label vs predicted label 15032-5668-FullBook.docx Level 1 Level 1
+667
+Level 2
+True label vs predicted label 15032-5670-FullBook.docx Level 1 Level 1
+668
+Level 2
+True label vs predicted label 15032-5671-FullBook.docx Level 1 Level 1
+669
+Level 1
+True label vs predicted label 15032-5674-FullBook.docx Level 1 Level 1
+670
+Level 1
+True label vs predicted label 15032-5675-FullBook.docx Level 1 Level 1
+671
+Level 1
+True label vs predicted label 15032-5676-FullBook.docx Level 1 Level 1
+672
+Level 2
+True label vs predicted label 15032-5677-FullBook.docx Level 1 Level 1
+673
+Level 1
+True label vs predicted label 15032-5680-FullBook.docx Level 1 Level 1
+674
+Level 1
+True label vs predicted label 15032-5682-FullBook.docx Level 1 Level 1
+675
+Level 1
+True label vs predicted label 15032-5683-FullBook.docx Level 1 Level 1
+676
+Level 1
+True label vs predicted label 15032-5684-FullBook.docx Level 1 Level 1
+677
+Level 1
+True label vs predicted label 15032-5685-FullBook.docx Level 1 Level 1
+678
+Level 2
+True label vs predicted label 15032-5688-FullBook.docx Level 1 Level 1
+679
+Level 1
+True label vs predicted label 15032-5689-FullBook.docx Level 1 Level 1
+680
+Level 1
+True label vs predicted label 15032-5690-FullBook.docx Level 1 Level 1
+681
+Level 1
+True label vs predicted label 15032-5691-FullBook.docx Level 1 Level 1
+682
+Level 2
+True label vs predicted label 15032-5692-FullBook.docx Level 1 Level 1
+683
+Level 1
+True label vs predicted label 15032-5693-FullBook.docx Level 1 Level 1
+684
+Level 1
+True label vs predicted label 15032-5697-FullBook.docx Level 1 Level 3
+685
+Level 2
+True label vs predicted label 15032-5698-FullBook.docx Level 1 Level 1
+686
+Level 1
+True label vs predicted label 15032-5699-FullBook.docx Level 1 Level 1
+687
+Level 2
+True label vs predicted label 15032-5700-FullBook.docx Level 1 Level 1
+688
+Level 2
+True label vs predicted label 15032-5701-FullBook.docx Level 1 Level 2
+689
+Level 2
+True label vs predicted label 15032-5702-FullBook.docx Level 1 Level 2
+690
+Level 2
+True label vs predicted label 15032-5703-FullBook.docx Level 1 Level 2
+691
+Level 2
+True label vs predicted label 15032-5705-FullBook.docx Level 1 Level 2
+692
+Level 1
+True label vs predicted label 15032-5706-FullBook.docx Level 1 Level 1
+693
+Level 1
+True label vs predicted label 15032-5707-FullBook.docx Level 1 Level 1
+694
+Level 2
+True label vs predicted label 15032-5710-FullBook.docx Level 1 Level 1
+695
+Level 1
+True label vs predicted label 15032-5712-FullBook.docx Level 1 Level 1
+696
+Level 1
+True label vs predicted label 15032-5715-FullBook.docx Level 1 Level 1
+697
+Level 1
+True label vs predicted label 15032-5717-FullBook.docx Level 1 Level 1
+698
+Level 1
+True label vs predicted label 15032-5718-FullBook.docx Level 1 Level 1
+699
+Level 1
+True label vs predicted label 15032-5719-FullBook.docx Level 1 Level 1
+700
+Level 1
+True label vs predicted label 15032-5720-FullBook.docx Level 1 Level 1
+701
+Level 1
+True label vs predicted label 15032-5721-FullBook.docx Level 1 Level 1
+702
+Level 2
+True label vs predicted label 15032-5722-FullBook.docx Level 1 Level 1
+703
+Level 1
+True label vs predicted label 15032-5723-FullBook.docx Level 1 Level 1
+704
+Level 1
+True label vs predicted label 15032-5724-FullBook.docx Level 1 Level 1
+705
+Level 1
+True label vs predicted label 15032-5726-FullBook.docx Level 1 Level 1
+706
+Level 2
+True label vs predicted label 15032-5727-FullBook.docx Level 1 Level 1
+707
+Level 1
+True label vs predicted label 15032-5728-FullBook.docx Level 1 Level 1
+708
+Level 2
+True label vs predicted label 15032-5730-FullBook.docx Level 1 Level 1
+709
+Level 3
+True label vs predicted label 15032-5731-FullBook.docx Level 1 Level 1
+710
+Level 1
+True label vs predicted label 15032-5732-FullBook.docx Level 1 Level 1
+711
+Level 1
+True label vs predicted label 15032-5734-FullBook.docx Level 1 Level 1
+712
+Level 1
+True label vs predicted label 15032-5735-FullBook.docx Level 1 Level 1
+713
+Level 1
+True label vs predicted label 15032-5737-FullBook.docx Level 1 Level 1
+714
+Level 2
+True label vs predicted label 15032-5740-FullBook.docx Level 1 Level 1
+715
+Level 1
+True label vs predicted label 15032-5744-FullBook.docx Level 1 Level 1
+716
+Level 1
+True label vs predicted label 15032-5746-FullBook.docx Level 1 Level 1
+717
+Level 2
+True label vs predicted label 15032-5747-FullBook.docx Level 1 Level 1
+718
+Level 3
+True label vs predicted label 15032-5748-FullBook.docx Level 1 Level 1
+719
+Level 1
+True label vs predicted label 15032-5751-FullBook.docx Level 1 Level 1
+720
+Level 1
+True label vs predicted label 15032-5752-FullBook.docx Level 1 Level 1
+721
+Level 1
+True label vs predicted label 15032-5753-FullBook.docx Level 1 Level 1
+722
+Level 1
+True label vs predicted label 15032-5755-FullBook.docx Level 1 Level 1
+723
+Level 1
+True label vs predicted label 15032-5756-FullBook.docx Level 1 Level 1
+724
+Level 1
+True label vs predicted label 15032-5758-FullBook.docx Level 1 Level 1
+725
+Level 1
+True label vs predicted label 15032-5761-FullBook.docx Level 1 Level 1
+726
+Level 1
+True label vs predicted label 15032-5762-FullBook.docx Level 1 Level 1
+727
+Level 2
+True label vs predicted label 15032-5764-FullBook.docx Level 1 Level 1
+728
+Level 1
+True label vs predicted label 15032-5765-FullBook.docx Level 1 Level 1
+729
+Level 2
+True label vs predicted label 15032-5766-FullBook.docx Level 1 Level 1
+730
+Level 1
+True label vs predicted label 15032-5767-FullBook.docx Level 1 Level 1
+731
+Level 1
+True label vs predicted label 15032-5768-FullBook.docx Level 1 Level 1
+732
+Level 1
+True label vs predicted label 15032-5769-FullBook.docx Level 1 Level 1
+733
+Level 1
+True label vs predicted label 15032-5770-FullBook.docx Level 1 Level 1
+734
+Level 1
+True label vs predicted label 15032-5775-FullBook.docx Level 1 Level 1
+735
+Level 2
+True label vs predicted label 15032-5777-FullBook.docx Level 1 Level 1
+736
+Level 2
+True label vs predicted label 15032-5778-FullBook.docx Level 1 Level 1
+737
+Level 1
+True label vs predicted label 15032-5779-FullBook.docx Level 1 Level 1
+738
+Level 1
+True label vs predicted label 15032-5780-FullBook.docx Level 1 Level 1
+739
+Level 2
+True label vs predicted label 15032-5781-FullBook.docx Level 1 Level 1
+740
+Level 2
+True label vs predicted label 15032-5783-FullBook.docx Level 1 Level 1
+741
+Level 1
+True label vs predicted label 15032-5784-FullBook.docx Level 1 Level 1
+742
+Level 1
+True label vs predicted label 15032-5785-FullBook.docx Level 1 Level 1
+743
+Level 2
+True label vs predicted label 15032-5788-FullBook.docx Level 1 Level 2
+744
+Level 1
+True label vs predicted label 15032-5790-FullBook.docx Level 1 Level 1
+745
+Level 3
+True label vs predicted label 15032-5791-FullBook.docx Level 1 Level 1
+746
+Level 2
+True label vs predicted label 15032-5792-FullBook.docx Level 1 Level 1
+747
+Level 1
+True label vs predicted label 15032-5793-FullBook.docx Level 1 Level 1
+748
+Level 2
+True label vs predicted label 15032-5795-FullBook.docx Level 1 Level 3
+749
+Level 2
+True label vs predicted label 15032-5796-FullBook.docx Level 1 Level 1
+750
+Level 1
+True label vs predicted label 15032-5797-FullBook.docx Level 1 Level 1
+751
+Level 1
+True label vs predicted label 15032-5800-FullBook.docx Level 1 Level 1
+752
+Level 1
+True label vs predicted label 15032-5801-FullBook.docx Level 1 Level 1
+753
+Level 1
+True label vs predicted label 15032-5802-FullBook.docx Level 1 Level 1
+754
+Level 2
+True label vs predicted label 15032-5803-FullBook.docx Level 1 Level 1
+755
+Level 1
+True label vs predicted label 15032-5804-FullBook.docx Level 1 Level 1
+756
+Level 1
+True label vs predicted label 15032-5808-FullBook.docx Level 1 Level 1
+757
+Level 2
+True label vs predicted label 15032-5810-FullBook.docx Level 1 Level 1
+758
+Level 2
+True label vs predicted label 15032-5811-FullBook.docx Level 1 Level 1
+759
+Level 1
+True label vs predicted label 15032-5813-FullBook.docx Level 1 Level 1
+760
+Level 1
+True label vs predicted label 15032-5815-FullBook.docx Level 1 Level 1
+761
+Level 1
+True label vs predicted label 15032-5816-FullBook.docx Level 1 Level 1
+762
+Level 1
+True label vs predicted label 15032-5817-FullBook.docx Level 1 Level 1
+763
+Level 2
+True label vs predicted label 15032-5819-FullBook.docx Level 1 Level 1
+764
+Level 1
+True label vs predicted label 15032-5822-FullBook.docx Level 1 Level 1
+765
+Level 1
+True label vs predicted label 15032-5823-FullBook.docx Level 1 Level 1
+766
+Level 2
+True label vs predicted label 15032-5824-FullBook.docx Level 1 Level 1
+767
+Level 2
+True label vs predicted label 15032-5825-FullBook.docx Level 1 Level 1
+768
+Level 1
+True label vs predicted label 15032-5826-FullBook.docx Level 1 Level 2
+769
+Level 2
+True label vs predicted label 15032-5830-FullBook.docx Level 1 Level 1
+770
+Level 1
+True label vs predicted label 15032-5838-FullBook.docx Level 1 Level 1
+771
+Level 3
+True label vs predicted label 15032-5844-FullBook.docx Level 1 Level 2
+772
+Level 1
+True label vs predicted label 15032-5845-FullBook.docx Level 1 Level 1
+773
+Level 1
+True label vs predicted label 15032-5847-FullBook.docx Level 1 Level 1
+774
+Level 1
+True label vs predicted label 15032-5848-FullBook.docx Level 1 Level 1
+775
+Level 1
+True label vs predicted label 15032-5849-FullBook.docx Level 1 Level 2
+776
+Level 2
+True label vs predicted label 15032-5850-FullBook.docx Level 1 Level 1
+777
+Level 2
+True label vs predicted label 15032-5851-FullBook.docx Level 1 Level 1
+778
+Level 1
+True label vs predicted label 15032-5852-FullBook.docx Level 1 Level 1
+779
+Level 2
+True label vs predicted label 15032-5853-FullBook.docx Level 1 Level 1
+780
+Level 1
+True label vs predicted label 15032-5857-FullBook.docx Level 1 Level 1
+781
+Level 1
+True label vs predicted label 15032-5858-FullBook.docx Level 1 Level 1
+782
+Level 1
+True label vs predicted label 15032-5859-FullBook.docx Level 1 Level 1
+783
+Level 2
+True label vs predicted label 15032-5860-FullBook.docx Level 1 Level 1
+784
+Level 2
+True label vs predicted label 15032-5862-FullBook.docx Level 1 Level 1
+785
+Level 1
+True label vs predicted label 15032-5863-FullBook.docx Level 1 Level 1
+786
+Level 1
+True label vs predicted label 15032-5864-FullBook.docx Level 1 Level 1
+787
+Level 2
+True label vs predicted label 15032-5865-FullBook.docx Level 1 Level 1
+788
+Level 3
+True label vs predicted label 15032-5866-FullBook.docx Level 1 Level 1
+789
+Level 2
+True label vs predicted label 15032-5867-FullBook.docx Level 1 Level 1
+790
+Level 1
+True label vs predicted label 15032-5868-FullBook.docx Level 1 Level 1
+791
+Level 1
+True label vs predicted label 15032-5869-FullBook.docx Level 1 Level 1
+792
+Level 2
+True label vs predicted label 15032-5870-FullBook.docx Level 1 Level 2
+793
+Level 2
+True label vs predicted label 15032-5871-FullBook.docx Level 1 Level 1
+794
+Level 1
+True label vs predicted label 15032-5872-FullBook.docx Level 1 Level 1
+795
+Level 3
+True label vs predicted label 15032-5873-FullBook.docx Level 1 Level 1
+796
+Level 2
+True label vs predicted label 15032-5874-FullBook.docx Level 1 Level 2
+797
+Level 2
+True label vs predicted label 15032-5876-FullBook.docx Level 1 Level 2
+798
+Level 1
+True label vs predicted label 15032-5878-FullBook.docx Level 1 Level 1
+799
+Level 1
+True label vs predicted label 15032-5879-FullBook.docx Level 1 Level 1
+800
+Level 1
+True label vs predicted label 15032-5882-FullBook.docx Level 1 Level 1
+801
+Level 1
+True label vs predicted label 15032-5885-FullBook.docx Level 1 Level 2
+802
+Level 1
+True label vs predicted label 15032-5886-FullBook.docx Level 1 Level 2
+803
+Level 1
+True label vs predicted label 15032-5887-FullBook.docx Level 1 Level 2
+804
+Level 2
+True label vs predicted label 15032-5888-FullBook.docx Level 1 Level 1
+805
+Level 2
+True label vs predicted label 15032-5890-FullBook.docx Level 1 Level 1
+806
+Level 1
+True label vs predicted label 15032-5891-FullBook.docx Level 1 Level 1
+807
+Level 2
+True label vs predicted label 15032-5892-FullBook.docx Level 1 Level 2
+808
+Level 1
+True label vs predicted label 15032-5894-FullBook.docx Level 1 Level 1
+809
+Level 1
+True label vs predicted label 15032-5895-FullBook.docx Level 1 Level 1
+810
+Level 2
+True label vs predicted label 15032-5899-FullBook.docx Level 1 Level 1
+811
+Level 1
+True label vs predicted label 15032-5901-FullBook.docx Level 1 Level 1
+812
+Level 1
+True label vs predicted label 15032-5902-FullBook.docx Level 1 Level 1
+813
+Level 1
+True label vs predicted label 15032-5904-FullBook.docx Level 1 Level 1
+814
+Level 1
+True label vs predicted label 15032-5906-FullBook.docx Level 1 Level 1
+815
+Level 1
+True label vs predicted label 15032-5907-FullBook.docx Level 1 Level 1
+816
+Level 1
+True label vs predicted label 15032-5908-FullBook.docx Level 1 Level 1
+817
+Level 2
+True label vs predicted label 15032-5909-FullBook.docx Level 1 Level 1
+818
+Level 2
+True label vs predicted label 15032-5910-FullBook.docx Level 1 Level 1
+819
+Level 2
+True label vs predicted label 15032-5911-FullBook.docx Level 1 Level 1
+820
+Level 1
+True label vs predicted label 15032-5912-FullBook.docx Level 1 Level 1
+821
+Level 1
+True label vs predicted label 15032-5913-FullBook.docx Level 1 Level 1
+822
+Level 2
+True label vs predicted label 15032-5914-FullBook.docx Level 1 Level 1
+823
+Level 2
+True label vs predicted label 15032-5915-FullBook.docx Level 1 Level 1
+824
+Level 1
+True label vs predicted label 15032-5916-FullBook.docx Level 1 Level 1
+825
+Level 1
+True label vs predicted label 15032-5917-FullBook.docx Level 1 Level 1
+826
+Level 2
+True label vs predicted label 15032-5920-FullBook.docx Level 1 Level 1
+827
+Level 3
+True label vs predicted label 15032-5923-FullBook.docx Level 1 Level 1
+828
+Level 2
+True label vs predicted label 15032-5924-FullBook.docx Level 1 Level 1
+829
+Level 1
+True label vs predicted label 15032-5927-FullBook.docx Level 1 Level 1
+830
+Level 2
+True label vs predicted label 15032-5929-FullBook.docx Level 1 Level 2
+831
+Level 2
+True label vs predicted label 15032-5930-FullBook.docx Level 1 Level 1
+832
+Level 1
+True label vs predicted label 15032-5931-FullBook.docx Level 1 Level 1
+833
+Level 1
+True label vs predicted label 15032-5932-FullBook.docx Level 1 Level 1
+834
+Level 1
+True label vs predicted label 15032-5933-FullBook.docx Level 1 Level 2
+835
+Level 2
+True label vs predicted label 15032-5934-FullBook.docx Level 1 Level 1
+836
+Level 2
+True label vs predicted label 15032-5935-FullBook.docx Level 1 Level 1
+837
+Level 1
+True label vs predicted label 15032-5936-FullBook.docx Level 1 Level 1
+838
+Level 1
+True label vs predicted label 15032-5938-FullBook.docx Level 1 Level 2
+839
+Level 1
+True label vs predicted label 15032-5939-FullBook.docx Level 1 Level 1
+840
+Level 1
+True label vs predicted label 15032-5940-FullBook.docx Level 1 Level 1
+841
+Level 1
+True label vs predicted label 15032-5941-FullBook.docx Level 1 Level 1
+842
+Level 1
+True label vs predicted label 15032-5942-FullBook.docx Level 1 Level 1
+843
+Level 2
+True label vs predicted label 15032-5943-FullBook.docx Level 1 Level 1
+844
+Level 1
+True label vs predicted label 15032-5944-FullBook.docx Level 1 Level 1
+845
+Level 3
+True label vs predicted label 15032-5947-FullBook.docx Level 1 Level 1
+846
+Level 3
+True label vs predicted label 15032-5948-FullBook.docx Level 1 Level 1
+847
+Level 1
+True label vs predicted label 15032-5952-FullBook.docx Level 1 Level 1
+848
+Level 1
+True label vs predicted label 15032-5953-FullBook.docx Level 1 Level 1
+849
+Level 1
+True label vs predicted label 15032-5954-FullBook.docx Level 1 Level 1
+850
+Level 1
+True label vs predicted label 15032-5955-FullBook.docx Level 1 Level 2
+851
+Level 3
+True label vs predicted label 15032-5959-FullBook.docx Level 1 Level 1
+852
+Level 1
+True label vs predicted label 15032-5960-FullBook.docx Level 1 Level 1
+853
+Level 1
+True label vs predicted label 15032-5963-FullBook.docx Level 1 Level 1
+854
+Level 3
+True label vs predicted label 15032-5964-FullBook.docx Level 1 Level 1
+855
+Level 1
+True label vs predicted label 15032-5965-FullBook.docx Level 1 Level 1
+856
+Level 2
+True label vs predicted label 15032-5966-FullBook.docx Level 1 Level 1
+857
+Level 1
+True label vs predicted label 15032-5967-FullBook.docx Level 1 Level 1
+858
+Level 2
+True label vs predicted label 15032-5968-FullBook.docx Level 1 Level 1
+859
+Level 1
+True label vs predicted label 15032-5971-FullBook.docx Level 1 Level 1
+860
+Level 1
+True label vs predicted label 15032-5973-FullBook.docx Level 1 Level 1
+861
+Level 1
+True label vs predicted label 15032-5974-FullBook.docx Level 1 Level 1
+862
+Level 1
+True label vs predicted label 15032-5975-FullBook.docx Level 1 Level 1
+863
+Level 2
+True label vs predicted label 15032-5980-FullBook.docx Level 1 Level 1
+864
+Level 1
+True label vs predicted label 15032-5981-FullBook.docx Level 1 Level 1
+865
+Level 1
+True label vs predicted label 15032-5982-FullBook.docx Level 1 Level 1
+866
+Level 2
+True label vs predicted label 15032-5983-FullBook.docx Level 1 Level 1
+867
+Level 1
+True label vs predicted label 15032-5985-FullBook.docx Level 1 Level 1
+868
+Level 1
+True label vs predicted label 15032-5986-FullBook.docx Level 1 Level 1
+869
+Level 1
+True label vs predicted label 15032-5989-FullBook.docx Level 1 Level 1
+870
+Level 1
+True label vs predicted label 15032-5990-FullBook.docx Level 1 Level 1
+871
+Level 2
+True label vs predicted label 15032-5991-FullBook.docx Level 1 Level 1
+872
+Level 1
+True label vs predicted label 15032-5992-FullBook.docx Level 1 Level 1
+873
+Level 2
+True label vs predicted label 15032-5996-FullBook.docx Level 1 Level 1
+874
+Level 1
+True label vs predicted label 15032-5997-FullBook.docx Level 1 Level 1
+875
+Level 1
+True label vs predicted label 15032-5998-FullBook.docx Level 1 Level 1
+876
+Level 2
+True label vs predicted label 15032-5999-FullBook.docx Level 1 Level 1
+877
+Level 1
+True label vs predicted label 15032-6000-FullBook.docx Level 1 Level 2
+878
+Level 1
+True label vs predicted label 15032-6001-FullBook.docx Level 1 Level 1
+879
+Level 1
+True label vs predicted label 15032-6003-FullBook.docx Level 1 Level 1
+880
+Level 1
+True label vs predicted label 15032-6004-FullBook.docx Level 1 Level 1
+881
+Level 1
+True label vs predicted label 15032-6005-FullBook.docx Level 1 Level 1
+882
+Level 2
+True label vs predicted label 15032-6007-FullBook.docx Level 1 Level 2
+883
+Level 1
+True label vs predicted label 15032-6010-FullBook.docx Level 1 Level 1
+884
+Level 1
+True label vs predicted label 15032-6016-FullBook.docx Level 1 Level 1
+885
+Level 2
+True label vs predicted label 15032-6018-FullBook.docx Level 1 Level 1
+886
+Level 3
+True label vs predicted label 15032-6019-FullBook.docx Level 1 Level 1
+887
+Level 3
+True label vs predicted label 15032-6021-FullBook.docx Level 1 Level 2
+888
+Level 1
+True label vs predicted label 15032-6025-FullBook.docx Level 1 Level 1
+889
+Level 2
+True label vs predicted label 15032-6026-FullBook.docx Level 1 Level 2
+890
+Level 2
+True label vs predicted label 15032-6028-FullBook.docx Level 1 Level 1
+891
+Level 3
+True label vs predicted label 15032-6030-FullBook.docx Level 1 Level 1
+892
+Level 1
+True label vs predicted label 15032-6031-FullBook.docx Level 1 Level 1
+893
+Level 3
+True label vs predicted label 15032-6040-FullBook.docx Level 1 Level 1
+894
+Level 2
+True label vs predicted label 15032-6076-FullBook.docx Level 1 Level 1
+895
+Level 2
+True label vs predicted label 15031-5020-FullBook.docx Level 2 Level 2
+896
+Level 2
+True label vs predicted label 15031-5044-FullBook.docx Level 2 Level 2
+897
+Level 2
+True label vs predicted label 15031-5079-FullBook.docx Level 2 Level 2
+898
+Level 2
+True label vs predicted label 15031-5091-FullBook.docx Level 2 Level 2
+899
+Level 2
+True label vs predicted label 15031-5094-FullBook.docx Level 2 Level 2
+900
+Level 1
+True label vs predicted label 15031-5095-FullBook.docx Level 2 Level 1
+901
+Level 2
+True label vs predicted label 15031-5096-FullBook.docx Level 2 Level 2
+902
+Level 2
+True label vs predicted label 15031-5113-FullBook.docx Level 2 Level 2
+903
+Level 1
+True label vs predicted label 15031-5116-FullBook.docx Level 2 Level 1
+904
+Level 3
+True label vs predicted label 15031-5119-FullBook.docx Level 2 Level 2
+905
+Level 2
+True label vs predicted label 15031-5127-FullBook.docx Level 2 Level 2
+906
+Level 3
+True label vs predicted label 15031-5128-FullBook.docx Level 2 Level 2
+907
+Level 2
+True label vs predicted label 15031-5134-FullBook.docx Level 2 Level 2
+908
+Level 2
+True label vs predicted label 15031-5137-FullBook.docx Level 2 Level 2
+909
+Level 2
+True label vs predicted label 15031-5138-FullBook.docx Level 2 Level 2
+910
+Level 1
+True label vs predicted label 15031-5158-FullBook.docx Level 2 Level 2
+911
+Level 1
+True label vs predicted label 15031-5162-FullBook.docx Level 2 Level 2
+912
+Level 2
+True label vs predicted label 15031-5177-FullBook.docx Level 2 Level 2
+913
+Level 2
+True label vs predicted label 15031-5178-FullBook.docx Level 2 Level 1
+914
+Level 1
+True label vs predicted label 15031-5183-FullBook.docx Level 2 Level 2
+915
+Level 2
+True label vs predicted label 15031-5186-FullBook.docx Level 2 Level 2
+916
+Level 1
+True label vs predicted label 15031-5204-FullBook.docx Level 2 Level 2
+917
+Level 2
+True label vs predicted label 15031-5212-FullBook.docx Level 2 Level 2
+918
+Level 1
+True label vs predicted label 15031-5214-FullBook.docx Level 2 Level 2
+919
+Level 2
+True label vs predicted label 15031-5216-FullBook.docx Level 2 Level 2
+920
+Level 1
+True label vs predicted label 15031-5223-FullBook.docx Level 2 Level 2
+921
+Level 2
+True label vs predicted label 15031-5228-FullBook.docx Level 2 Level 2
+922
+Level 2
+True label vs predicted label 15031-5235-FullBook.docx Level 2 Level 2
+923
+Level 3
+True label vs predicted label 15031-5249-FullBook.docx Level 2 Level 3
+924
+Level 2
+True label vs predicted label 15031-5254-FullBook.docx Level 2 Level 2
+925
+Level 2
+True label vs predicted label 15031-5275-FullBook.docx Level 2 Level 2
+926
+Level 1
+True label vs predicted label 15031-5292-FullBook.docx Level 2 Level 3
+927
+Level 2
+True label vs predicted label 15031-5311-FullBook.docx Level 2 Level 2
+928
+Level 2
+True label vs predicted label 15031-5324-FullBook.docx Level 2 Level 2
+929
+Level 1
+True label vs predicted label 15031-5340-FullBook.docx Level 2 Level 1
+930
+Level 2
+True label vs predicted label 15031-5363-FullBook.docx Level 2 Level 1
+931
+Level 2
+True label vs predicted label 15031-5379-FullBook.docx Level 2 Level 2
+932
