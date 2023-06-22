@@ -1,9 +1,11 @@
 import pandas as pd
 from docx import Document
+import docx
 import re
 import pandas as pd
 import torch
 from transformers import BigBirdTokenizer,BigBirdModel,BigBirdForSequenceClassification
+from transformers import AutoTokenizer, AutoModelForSequenceClassification
 from torch import Tensor
 import numpy as np
 from collections import Counter
@@ -19,20 +21,19 @@ import warnings
 warnings.filterwarnings("ignore")
 from torch.nn.utils import clip_grad_norm_
 from sklearn.metrics import classification_report
-# from tqdm import tqdm
-# from tqdm.notebook import tqdm
 from tqdm.auto import tqdm
 import math
 import matplotlib.pyplot as plt
 import subprocess
 import os
 import xml.etree.ElementTree as ET
-
 import torch.multiprocessing as mp 
 from torch.utils.data.distributed import DistributedSampler
 from torch.nn.parallel import DistributedDataParallel as DDP
 from torch.distributed import init_process_group, destroy_process_group
 import os
+import sys
+import argparse
 
 def ddp_setup(rank, world_size):
     os.environ["MASTER_ADDR"] = "localhost"
@@ -62,11 +63,10 @@ def kill_all_gpu_pids():
         os.system(f'kill -9 {pid}')
 
 class Trainer:
-    def __init__(self,model,tokenizer,train_data,test_loader,train_dataset,test_dataest,optimizer,scheduler,gpu_id,save_every):
+    def __init__(self,model,tokenizer,train_data,test_loader,train_dataset,test_dataest,optimizer,scheduler,gpu_id,save_every,epochs,lr_rate,batch_size,save_path):
         self.gpu_id = gpu_id
         self.model = model.to(gpu_id)
         self.model = DDP(self.model, device_ids = [self.gpu_id],find_unused_parameters=True)
-
         self.tokenizer = tokenizer
         self.train_data = train_data
         self.train_dataset = train_dataset
@@ -78,9 +78,10 @@ class Trainer:
         self.train_loss_per_epoch = []
         self.val_loss_per_epoch = []
         self.valid_pred = []
-        self.EPOCHS = 5
-        self.LEARNING_RATE = 0.0000025 ######
-        self.BATCH_SIZE = 5
+        self.EPOCHS = epochs
+        self.LEARNING_RATE = lr_rate ######
+        self.BATCH_SIZE = batch_size
+        self.model_save_path = save_path
         
     # def _run_batch(self, source, targets):
     #     self.optimizer.zero_grad()
@@ -149,15 +150,16 @@ class Trainer:
         plt.ylabel('Loss')
         plt.legend()
         # Save the plot as a PNG file
-        plt.savefig('./ddp/loss_plotBig_bird_new_data.png')
+        #'/home/ubuntu/ritesh_manchikanti/Bigbird/ddp/
+        plt.savefig(self.model_save_path + 'loss_plotBig_bird_new_data_trail.png')
 
     def show_classification_report(self):
         valid_true = [batch["label"].detach().cpu().numpy() for batch in self.test_loader]
         valid_true = np.concatenate(valid_true)
         print(classification_report(self.valid_pred, valid_true,labels=[0,1,2], target_names= ["level 1","level 2","level 3"]))
         # if self.gpu_id == 0:
-        self.model.module.save_pretrained("./ddp/savedmodel_multi_gpu_ddp")
-        self.tokenizer.save_pretrained("./ddp/savedmodel_multi_gpu_ddp/")
+        self.model.module.save_pretrained(self.model_save_path + 'model/')
+        self.tokenizer.save_pretrained(self.model_save_path + 'model/')
 
 def split_tokens_into_smaller_chunks(input_id: Tensor,att_mask: Tensor, chunk_size: int, stride: int, minimal_chunk_length: int):
         input_id_chunks = [input_id[i : i + chunk_size] for i in range(0, len(input_id), stride)]
@@ -217,18 +219,18 @@ def stack_tokens_from_all_chunks(input_id_chunks, mask_chunks):
 def data_prep(sample_df,tokenizer):
         text_splitter_1 = TokenTextSplitter(chunk_size=300, chunk_overlap=128)
         text_splitter_2 = TokenTextSplitter(chunk_size=150, chunk_overlap=64)
-        new_chunk_df = pd.DataFrame()
+        # new_chunk_df = pd.DataFrame()
         total_chunks = []  
         total_att_mask = [] 
         total_fnames = []
         total_labels = []
-        total_chunk_counts = []
+        # total_chunk_counts = []
         label2id = {"Level 1": 0, "Level 2": 1, "Level 3": 2}
-        chunks_count = 1
-        chunk_length = 2000
-        stride = 500
-        min_chunk_length = 256
-        length_total_labels = 0
+        # chunks_count = 1
+        # chunk_length = 2000
+        # stride = 500
+        # min_chunk_length = 256
+        # length_total_labels = 0
         chunk_len_list = []
         token_len_list = []
         for idx in range(sample_df.shape[0]):
@@ -267,15 +269,17 @@ def data_prep(sample_df,tokenizer):
             total_labels.extend((label_vec))
         return total_chunks,total_att_mask,total_labels
 
-def load_train_objs():
-    Data_csv = pd.read_csv("/home/ubuntu/cat_poc/llms/final_data.csv")
-    # sample_df = Data_csv.groupby("level").apply(lambda x: x.sample(1))
-    sample_df = pd.concat([
-        Data_csv[Data_csv['level'] == 'Level 1'].sample(85),
-        Data_csv[Data_csv['level'] == 'Level 2'].sample(85),
-        Data_csv[Data_csv['level'] == 'Level 3'].sample(60)
-    ]).reset_index(drop=True)
-    sample_df["filename"].to_csv("./ddp/selected_samples.csv", index=False)
+def load_train_objs(path,bch_size,EPOCHS,LEARNING_RATE):
+    # Data_csv = pd.read_csv("/home/ubuntu/cat_poc/llms/final_data.csv")
+    Data_csv = pd.read_csv(path)
+    sample_df = Data_csv.groupby("level").apply(lambda x: x.sample(1))
+    # sample_df = pd.concat([
+    #     Data_csv[Data_csv['level'] == 'Level 1'].sample(85),
+    #     Data_csv[Data_csv['level'] == 'Level 2'].sample(85),
+    #     Data_csv[Data_csv['level'] == 'Level 3'].sample(60)
+    # ]).reset_index(drop=True)
+    sample_df["filename"].to_csv("ritesh_manchikanti/Bigbird/ddp/selected_samples.csv", index=False)
+    
     tokenizer = BigBirdTokenizer.from_pretrained('google/bigbird-roberta-base')
     model = BigBirdForSequenceClassification.from_pretrained('google/bigbird-roberta-base', 
                                                         num_labels=3)
@@ -290,19 +294,19 @@ def load_train_objs():
 
     train_dataset, test_dataset = random_split(dataset, [train_size, test_size])
     train_loader = torch.utils.data.DataLoader(train_dataset,
-                                        batch_size=5,
+                                        batch_size=bch_size,
                                         pin_memory=True,
                                         shuffle=False,
                                         sampler = DistributedSampler(train_dataset)
                                         )
     test_loader = torch.utils.data.DataLoader(test_dataset,
-                                            batch_size=5,
+                                            batch_size=bch_size,
                                             pin_memory=True,
                                             sampler= DistributedSampler(test_dataset)
                                             )
-    EPOCHS = 5
-    LEARNING_RATE = 0.0000025 ######
-    BATCH_SIZE = 5
+    # EPOCHS = 5
+    # LEARNING_RATE = 0.0000025 ######
+    # BATCH_SIZE = 5
     optimizer = AdamW(model.parameters(), lr=LEARNING_RATE, weight_decay=0.04) #####
     # optimizer = torch.optim.SGD(model.parameters(), lr=LEARNING_RATE, weight_decay=0.04)
 
@@ -311,25 +315,146 @@ def load_train_objs():
                 num_training_steps=len(train_loader)*EPOCHS ) 
     return train_dataset,test_dataset, model,tokenizer, optimizer, scheduler,train_loader,test_loader
 
+def read_docx(file_path):
+    doc = docx.Document(file_path)
+    text = []
+    for paragraph in doc.paragraphs:
+        text.append(paragraph.text)
+    return '\n'.join(text)
 
-def main(rank, world_size,total_epochs, save_every):
+def predict_label(file_path, tokenizer, model):
+    text_splitter_1 = TokenTextSplitter(chunk_size=300, chunk_overlap=128)
+    text_splitter_2 = TokenTextSplitter(chunk_size=150, chunk_overlap=64)
+
+    label2id = {"Level 1": 0, "Level 2": 1, "Level 3": 2}
+    id_to_label = {v: k for k, v in label2id.items()}
+    true_labels = []
+    predicted_labels = []
+    text = read_docx(file_path)
+
+    chunks = text_splitter_1.split_text(text)
+    tokenized_chunks = []
+
+    for chunk in chunks:
+        tokens = tokenizer(chunk, truncation=True, padding=True, return_tensors="pt")
+        if len(tokens['input_ids'][0]) > 512:
+            sub_chunks = text_splitter_2.split_text(chunk)
+            for sub_chunk in sub_chunks:
+                tokens = tokenizer(sub_chunk, truncation=True, padding=True, return_tensors="pt")
+                tokenized_chunks.append(tokens)
+        else:
+            tokenized_chunks.append(tokens)
+
+    chunk_predicted_labels = []
+
+    for tokens in tokenized_chunks:
+        outputs = model(**tokens)
+        predicted_class_index = outputs.logits.argmax().item()
+        predicted_class_label = id_to_label[predicted_class_index]
+        chunk_predicted_labels.append(predicted_class_label)
+
+    majority_label = max(set(chunk_predicted_labels), key=chunk_predicted_labels.count)
+
+    return majority_label
+
+
+def main(rank, world_size,EPOCHS, save_every,path,LEARNING_RATE,bch_size,model_save_path):
     ddp_setup(rank,world_size)
-    train_dataset, test_dataset,model, tokenizer,optimizer, scheduler,train_loader,test_loader = load_train_objs()
+    train_dataset, test_dataset,model, tokenizer,optimizer, scheduler,train_loader,test_loader = load_train_objs(path,bch_size,EPOCHS,LEARNING_RATE)
     print("The length of the training dataset is ",len(train_dataset))
-    trainer = Trainer(model,tokenizer, train_loader,test_loader,train_dataset,test_dataset, optimizer,scheduler, rank, save_every)
-    trainer.train(total_epochs)
+    trainer = Trainer(model,tokenizer, train_loader,test_loader,train_dataset,test_dataset, optimizer,scheduler, rank, save_every,EPOCHS,LEARNING_RATE,bch_size,model_save_path)
+    trainer.train(EPOCHS)
     trainer.plot_loss()
     trainer.show_classification_report()
     print("the jobs are done ending all the processes.")
     # destroy_process_group()
     kill_all_gpu_pids()
 
+# if __name__ == "__main__":
+
+#     # Create an argument parser
+#     parser = argparse.ArgumentParser(description='Description of your script.')
+
+#     # Add command-line arguments
+#     parser.add_argument('--total_epochs', type=int, default=2, help='Total number of epochs')
+#     parser.add_argument('--save_every', type=int, default=1, help='Save model every N epochs')
+#     parser.add_argument('--batch_size', type=int, default=5, help='Batch size')
+#     parser.add_argument('--lr_rate', type=float, default=0.0000025, help='Learning rate')
+#     parser.add_argument('--path', type=str, default='/home/ubuntu/cat_poc/llms/final_data.csv', help='Data file path')
+#     parser.add_argument('--model_save_path', type=str, default='/home/ubuntu/ritesh_manchikanti/Bigbird/ddp/', help='Model save path')
+
+#     # Parse the command-line arguments
+#     args = parser.parse_args()
+
+#     # Access the values of the arguments
+#     total_epochs = args.total_epochs
+#     save_every = args.save_every
+#     batch_size = args.batch_size
+#     lr_rate = args.lr_rate
+#     path = args.path
+#     model_save_path = args.model_save_path
+
+#     # Use the values in your code
+#     print(f'Total epochs: {total_epochs}')
+#     print(f'Save every: {save_every}')
+#     print(f'Batch size: {batch_size}')
+#     print(f'Learning rate: {lr_rate}')
+#     print(f'Path: {path}')
+#     print(f'Model save path: {model_save_path}')
+    
+#     world_size = torch.cuda.device_count()
+#     mp.spawn(main,args =(world_size,total_epochs,save_every,path,lr_rate,batch_size,model_save_path),nprocs=world_size)
+    
+#     # Example usage
+#     tokenizer = AutoTokenizer.from_pretrained("./ddp/savedmodel_multi_gpu_ddp/")
+#     model = AutoModelForSequenceClassification.from_pretrained("./ddp/savedmodel_multi_gpu_ddp/")
+#     file_path = '/home/ubuntu/ritesh_manchikanti/Bigbird/15031-4983-FullBook.docx'
+#     predicted_label = predict_label(file_path, tokenizer, model)
+#     print(predicted_label)
+#     # main(device,total_epochs,save_every)
 
 if __name__ == "__main__":
-    import sys
-    total_epochs = 5
-    save_every = 1
-    # device = 3
-    world_size = torch.cuda.device_count()
-    mp.spawn(main,args =(world_size,total_epochs,save_every),nprocs=world_size )
-    # main(device,total_epochs,save_every)
+    # Create an argument parser
+    parser = argparse.ArgumentParser(description='Description of your script.')
+
+    # Add command-line arguments
+    parser.add_argument('--mode', type=str, choices=['train', 'test'], help='Mode: train or test')
+    # Add the rest of the arguments specific to train or test mode
+    parser.add_argument('--total_epochs', type=int, default=2, help='Total number of epochs')
+    parser.add_argument('--save_every', type=int, default=1, help='Save model every N epochs')
+    parser.add_argument('--batch_size', type=int, default=5, help='Batch size')
+    parser.add_argument('--lr_rate', type=float, default=0.0000025, help='Learning rate')
+    parser.add_argument('--path', type=str, default='/home/ubuntu/cat_poc/llms/final_data.csv', help='Data file path')
+    parser.add_argument('--model_save_path', type=str, default='/home/ubuntu/ritesh_manchikanti/Bigbird/ddp/', help='Model save path')
+    parser.add_argument('--tokenizer_path', type=str, default='/home/ubuntu/ritesh_manchikanti/Bigbird/ddp/savedmodel_multi_gpu_ddp', help='Tokenizer path')
+    parser.add_argument('--file_path', type=str, default='/home/ubuntu/ritesh_manchikanti/Bigbird/15031-4983-FullBook.docx', help='File path')
+
+    # Parse the command-line arguments
+    args = parser.parse_args()
+
+    # Add command-line arguments
+
+
+    # Access the mode argument
+    mode = args.mode
+
+    if mode == 'train':
+        # Access the rest of the train-specific arguments
+        total_epochs = args.total_epochs
+        save_every = args.save_every
+        batch_size = args.batch_size
+        lr_rate = args.lr_rate
+        path = args.path
+        model_save_path = args.model_save_path
+        world_size = torch.cuda.device_count()
+        mp.spawn(main, args=(world_size, total_epochs, save_every, path, lr_rate, batch_size, model_save_path), nprocs=world_size)
+    elif mode == 'test':
+        # Access the rest of the test-specific arguments
+        tokenizer_path  = args.tokenizer_path
+        tokenizer = AutoTokenizer.from_pretrained(tokenizer_path)
+        model = AutoModelForSequenceClassification.from_pretrained(tokenizer_path)
+        file_path = args.file_path
+        predicted_label = predict_label(file_path, tokenizer, model)
+        print(predicted_label)
+    else:
+        print("Invalid mode. Please choose 'train' or 'test'.")
