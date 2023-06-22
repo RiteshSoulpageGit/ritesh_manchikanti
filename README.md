@@ -32,7 +32,7 @@ To use this code, follow these steps:
 
 2. Install the required dependencies (see Prerequisites section).
 
-3. Run the Python script `main.py` to execute the code.
+3. Run the Python script `multi_gpu_ddp.py` to execute the code.
 
 ## Usage
 
