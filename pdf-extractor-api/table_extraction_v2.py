@@ -1,42 +1,32 @@
-import os
 import io
-import cv2
 import json
-import requests
+import os
 import warnings
-import pytesseract
-import PIL
 
-import numpy as np
-import pandas as pd
-from PIL import Image
-from imutils import resize
-
+import cv2
 # import pypdfium2 as pdfium
 import matplotlib.pyplot as plt
-
-from werkzeug.utils import secure_filename
+import numpy as np
+import pandas as pd
+import PIL
+import pytesseract
+import pytorch_lightning as pl
+import requests
+import tensorflow as tf
 import torch
-import torchmetrics
 import torch.nn as nn
 import torch.nn.functional as F
-from PIL import Image, JpegImagePlugin as jplugin
-import tensorflow as tf
-from tensorflow.keras.applications import VGG19
-from tensorflow.keras.layers import Input
-from tensorflow.keras.models import Model
-from tensorflow.keras.layers import Conv2D
-from tensorflow.keras.layers import Dropout
-from tensorflow.keras.layers import UpSampling2D
-from tensorflow.keras.layers import Concatenate
-from tensorflow.keras.layers import Layer
-from tensorflow.keras.layers import Conv2DTranspose
-
-import pytorch_lightning as pl
-from torchvision import transforms, models
-from pdf2image import convert_from_path, convert_from_bytes
+import torchmetrics
+from imutils import resize
+from pdf2image import convert_from_bytes, convert_from_path
 from PIL import Image
-
+from PIL import JpegImagePlugin as jplugin
+from tensorflow.keras.applications import VGG19
+from tensorflow.keras.layers import (Concatenate, Conv2D, Conv2DTranspose,
+                                     Dropout, Input, Layer, UpSampling2D)
+from tensorflow.keras.models import Model
+from torchvision import models, transforms
+from werkzeug.utils import secure_filename
 
 labels = 0
 warnings.filterwarnings("ignore")
@@ -123,7 +113,7 @@ class Classificationmodel(pl.LightningModule):
 
 class TableDetectionInImage:
     def __init__(self):
-        self.path = "models/model_15.h5"
+        self.path = "model_15.h5"
         self.table_detect_model()
 
     ### model architecture for the table detection
@@ -303,6 +293,7 @@ class TableDetectionInImage:
         )
 
     ## cropping table images form the table mask
+    ## converts single page image into table images. individual image for every table that is detected using mode_15.h5
     def detected_table_images(self, img_path):
         if type(img_path) == Image.Image:
             img = np.array(img_path)
@@ -342,20 +333,21 @@ class TableDetectionInImage:
         contours, _ = cv2.findContours(
             table_mask, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE
         )
-
-        # Extract subimages corresponding to each contour
-        table_imgs = []
+        # Create the new folder if it doesn't exist
+        if not os.path.exists(new_folder_path):
+            os.makedirs(new_folder_path)
+            print("Created a new folder")
+            
         for contour in contours:
             x, y, w, h = cv2.boundingRect(contour)
             table_img = img[0][y : y + h, x : x + w]
             table_imgs.append(table_img)
-
         return table_imgs
 
 
 class TableImagePreprocessing:
     def __init__(self):
-        model_path = r"models/model_weights_32.pt"
+        model_path = r"model_weights_13.pt"
         # mod = Classificationmodel(3)
         self.model = model
 
@@ -562,6 +554,7 @@ class TableImagePreprocessing:
         return tbl_image
 
     # detection of horizontal and vertical lines to get the final boxes
+    #finds the intersection points 
     def detect_horizontal_vertical_lines(self, img):
         img = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
 
@@ -730,6 +723,7 @@ class TableImagePreprocessing:
     ### prediction for the classification model
     def table_border_classification_and_identification(self, image_path):
         image = Image.fromarray(image_path.astype("uint8"), "RGB")
+        
         transform = transforms.Compose(
             [transforms.Resize((224, 224)), transforms.ToTensor()]
         )
@@ -738,13 +732,16 @@ class TableImagePreprocessing:
         out = self.model(t_img)
         # out = model(t_img)
         _, pred = out.max(1)
+        # print("Predicted")
         class_dict = {
             0: "bordered_table",
             1: "borderless_table",
             2: "partially_bordered_table",
+            3: "others"
         }
         result = class_dict[pred.item()]
-
+        print("result",result)
+        # image.save("result.png")
         img = self.rescaling(image_path)
         img = self.background_removal(img)
 
@@ -757,8 +754,10 @@ class TableImagePreprocessing:
         # if not a Complete white image, means if has text
         if white_percentage < 99.95:
             if result == "partially_bordered_table":
+                #
                 img = self.line_removal(img, image_path)
                 img = self.is_clean_image(img)
+                
 
             if img is not None and result in ["borderless_table", "partially_bordered_table"]:
                 img = self.draw_lines(img)
@@ -788,8 +787,27 @@ class TableExtraction(TableImagePreprocessing, TableDetectionInImage):
 
     def get_table_extractions(self, image):
         table_img_list = self.detected_table_images(image)
+        print(len(table_img_list))
+        # print(table_img_list)
         extractions = []
-        for num, table_img in enumerate(table_img_list):
+        import os
+        last_folder_num = 0
+        existing_folders = [folder for folder in os.listdir("./img") if folder.startswith("images")]
+        if existing_folders:
+            last_folder = max(existing_folders, key=lambda x: int(x.split("_")[1]))
+            last_folder_num = int(last_folder.split("_")[1])
+        # Increment the folder number
+        new_folder_num = last_folder_num + 1
+        new_folder_path = f"./img/images_{new_folder_num}"
+
+        # Create the new folder if it doesn't exist
+        if not os.path.exists(new_folder_path):
+            os.makedirs(new_folder_path)
+            print("created a new folder")
+        for num, table_img in enumerate(table_img_list):  
+            image = Image.fromarray(table_img)
+            # Save the image with an iterative name
+            image.save(os.path.join(new_folder_path, f"image{num}.png"))
             extraction = self.table_border_classification_and_identification(table_img)
             # if len(extraction) != 0:#
             if extraction is not None:
@@ -818,13 +836,14 @@ class TableExtraction(TableImagePreprocessing, TableDetectionInImage):
             pdf_path = self.input_file
 
             # Convert PDF pages to PIL image objects
-            images = convert_from_bytes(pdf_path, fmt="jpeg")
+            images = convert_from_path(pdf_path, fmt="jpeg")
             extractions = []
             for i, img in enumerate(images):
+                print("page no ",i)
                 extract = self.get_table_extractions(img)
                 extract = {"Page " + str(i + 1): extract}
                 extractions.append(extract)
-
+                # break
             return extractions
 
         elif self.file_type == "image":
@@ -840,7 +859,8 @@ class TableExtraction(TableImagePreprocessing, TableDetectionInImage):
 import __main__
 
 setattr(__main__, "Classificationmodel", Classificationmodel)
-model = torch.load("models/model_weights_32.pt", map_location=torch.device("cpu"))
+model = torch.load(r"model_weights_13.pt", map_location=torch.device("cpu"))
 # obj = TableExtraction(r"C:\Users\Admin\Downloads\table_ocr_project\15032-5280-FullBook.pdf")
-obj = TableExtraction(r"/home/ubuntu/ritesh_manchikanti/pdf-extractor-api/OCR_SANTOSH/291169012_suoypoa1rvi5puntbojalx12.pdf")
+obj = TableExtraction(r"OCR_SANTOSH/291169012_suoypoa1rvi5puntbojalx12.pdf","291169012_suoypoa1rvi5puntbojalx12.pdf")
 result = obj.extract_table()
+print(result)
