@@ -334,10 +334,10 @@ class TableDetectionInImage:
             table_mask, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE
         )
         # Create the new folder if it doesn't exist
-        if not os.path.exists(new_folder_path):
-            os.makedirs(new_folder_path)
-            print("Created a new folder")
-            
+        # if not os.path.exists(new_folder_path):
+        #     os.makedirs(new_folder_path)
+        #     print("Created a new folder")
+        table_imgs = []   
         for contour in contours:
             x, y, w, h = cv2.boundingRect(contour)
             table_img = img[0][y : y + h, x : x + w]
@@ -557,7 +557,7 @@ class TableImagePreprocessing:
     #finds the intersection points 
     def detect_horizontal_vertical_lines(self, img):
         img = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
-
+        cv2.imwrite("./lines.png",img)
         # thresholding the image to a binary image
         _, img_bin = cv2.threshold(img, 128, 255, cv2.THRESH_BINARY | cv2.THRESH_OTSU)
         # inverting the image
@@ -664,6 +664,7 @@ class TableImagePreprocessing:
     #### ocr from the finalboxes
     def ocr(self, finalboxes, bitnot, row, countcol):
         outer = []
+        sum = 0 
         for i in range(len(finalboxes)):
             for j in range(len(finalboxes[i])):
                 inner = ""
@@ -687,6 +688,9 @@ class TableImagePreprocessing:
                         )
                         # dilation = cv2.dilate(resizing, kernel, iterations=1)
                         erosion = cv2.erode(resizing, kernel, iterations=1)
+                        
+                        cv2.imwrite(f"./e_img/er_img{sum}.png", erosion)
+                        sum += 1 
                         out = pytesseract.image_to_string(erosion, config="--psm 6")
                         if len(out) == 0:
                             out = pytesseract.image_to_string(erosion, config="--psm 3")
@@ -736,12 +740,13 @@ class TableImagePreprocessing:
         class_dict = {
             0: "bordered_table",
             1: "borderless_table",
-            2: "partially_bordered_table",
-            3: "others"
+            3: "partially_bordered_table",
+            2: "others"
         }
         result = class_dict[pred.item()]
         print("result",result)
         # image.save("result.png")
+        
         img = self.rescaling(image_path)
         img = self.background_removal(img)
 
@@ -750,15 +755,13 @@ class TableImagePreprocessing:
         total_pixels = img.shape[0] * img.shape[1]
         white_percentage = (white_pixels / total_pixels) * 100
         # if not a Complete white image, means if has text
-
+        print("white_percentage",white_percentage)
         # if not a Complete white image, means if has text
-        if white_percentage < 99.95:
+        if white_percentage < 99.99:
             if result == "partially_bordered_table":
-                #
                 img = self.line_removal(img, image_path)
                 img = self.is_clean_image(img)
                 
-
             if img is not None and result in ["borderless_table", "partially_bordered_table"]:
                 img = self.draw_lines(img)
                 img = self.is_clean_image(img)
@@ -843,7 +846,7 @@ class TableExtraction(TableImagePreprocessing, TableDetectionInImage):
                 extract = self.get_table_extractions(img)
                 extract = {"Page " + str(i + 1): extract}
                 extractions.append(extract)
-                # break
+                break
             return extractions
 
         elif self.file_type == "image":
@@ -858,9 +861,22 @@ class TableExtraction(TableImagePreprocessing, TableDetectionInImage):
 
 import __main__
 
+import os
+
+# Specify the folder names
+folder_names = ['img', 'e_img']
+
+# Define the parent directory path where the folders will be created
+parent_directory = './'
+
+# Create the folders
+for folder_name in folder_names:
+    folder_path = os.path.join(parent_directory, folder_name)
+    os.makedirs(folder_path, exist_ok=True)
 setattr(__main__, "Classificationmodel", Classificationmodel)
 model = torch.load(r"model_weights_13.pt", map_location=torch.device("cpu"))
 # obj = TableExtraction(r"C:\Users\Admin\Downloads\table_ocr_project\15032-5280-FullBook.pdf")
 obj = TableExtraction(r"OCR_SANTOSH/291169012_suoypoa1rvi5puntbojalx12.pdf","291169012_suoypoa1rvi5puntbojalx12.pdf")
 result = obj.extract_table()
+print("RESULT")
 print(result)
