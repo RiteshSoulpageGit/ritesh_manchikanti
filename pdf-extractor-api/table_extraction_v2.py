@@ -507,9 +507,9 @@ class TableImagePreprocessing:
             dividers = get_dividers(tbl_resized, a)
             start_point = [0, 0]
             if a == 0:
-                end_point = [dims[0], dims[0]]
+                end_point = [dims[0] - 5 , dims[0] -5 ]
             else:
-                end_point = [dims[1], dims[1]]
+                end_point = [dims[1] - 5 , dims[1] - 5 ]
             for i in dividers:
                 i *= R
                 start_point[a] = int(i)
@@ -557,7 +557,23 @@ class TableImagePreprocessing:
     #finds the intersection points 
     def detect_horizontal_vertical_lines(self, img):
         img = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
-        cv2.imwrite("./lines.png",img)
+        
+        last_folder_num = 0
+        existing_folders = [folder for folder in os.listdir("./l_img") if folder.startswith("images")]
+        if existing_folders:
+            last_folder = max(existing_folders, key=lambda x: int(x.split("_")[1]))
+            last_folder_num = int(last_folder.split("_")[1])
+        # Increment the folder number
+        new_folder_num = last_folder_num + 1
+        new_folder_path = f"./l_img/images_{new_folder_num}"
+
+        # Create the new folder if it doesn't exist
+        if not os.path.exists(new_folder_path):
+            os.makedirs(new_folder_path)
+            print("created a new folder")
+
+        cv2.imwrite(os.path.join(new_folder_path, "lines.png"),img)
+        # image.save(os.path.join(new_folder_path, f"image{num}.png"))
         # thresholding the image to a binary image
         _, img_bin = cv2.threshold(img, 128, 255, cv2.THRESH_BINARY | cv2.THRESH_OTSU)
         # inverting the image
@@ -864,7 +880,7 @@ import __main__
 import os
 
 # Specify the folder names
-folder_names = ['img', 'e_img']
+folder_names = ['img', 'e_img','l_img']
 
 # Define the parent directory path where the folders will be created
 parent_directory = './'
