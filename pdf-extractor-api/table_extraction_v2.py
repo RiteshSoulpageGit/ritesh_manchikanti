@@ -558,21 +558,23 @@ class TableImagePreprocessing:
     def detect_horizontal_vertical_lines(self, img):
         img = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
         
-        last_folder_num = 0
-        existing_folders = [folder for folder in os.listdir("./l_img") if folder.startswith("images")]
-        if existing_folders:
-            last_folder = max(existing_folders, key=lambda x: int(x.split("_")[1]))
-            last_folder_num = int(last_folder.split("_")[1])
-        # Increment the folder number
-        new_folder_num = last_folder_num + 1
-        new_folder_path = f"./l_img/images_{new_folder_num}"
+        last_image_num = 0
+        existing_images = [image for image in os.listdir("./l_img") if image.startswith("line_")]
+        if existing_images:
+            last_image = max(existing_images, key=lambda x: int(x.split("_")[1].split(".")[0]))
+            last_image_num = int(last_image.split("_")[1].split(".")[0])
+        # Increment the image number
+        new_image_num = last_image_num + 1
+        new_image_name = f"line_{new_image_num}.jpg"
+        new_folder_path = f"./l_img/line_{new_folder_num}.png"
+        print("lines image saved as -",new_folder_path)
 
-        # Create the new folder if it doesn't exist
-        if not os.path.exists(new_folder_path):
-            os.makedirs(new_folder_path)
-            print("created a new folder")
+        # # Create the new folder if it doesn't exist
+        # if not os.path.exists(new_folder_path):
+        #     os.makedirs(new_folder_path)
+        #     print("created a new folder")
 
-        cv2.imwrite(os.path.join(new_folder_path, "lines.png"),img)
+        cv2.imwrite(new_folder_path,img)
         # image.save(os.path.join(new_folder_path, f"image{num}.png"))
         # thresholding the image to a binary image
         _, img_bin = cv2.threshold(img, 128, 255, cv2.THRESH_BINARY | cv2.THRESH_OTSU)
@@ -771,7 +773,7 @@ class TableImagePreprocessing:
         total_pixels = img.shape[0] * img.shape[1]
         white_percentage = (white_pixels / total_pixels) * 100
         # if not a Complete white image, means if has text
-        print("white_percentage",white_percentage)
+        # print("white_percentage",white_percentage)
         # if not a Complete white image, means if has text
         if white_percentage < 99.99:
             if result == "partially_bordered_table":
@@ -862,7 +864,7 @@ class TableExtraction(TableImagePreprocessing, TableDetectionInImage):
                 extract = self.get_table_extractions(img)
                 extract = {"Page " + str(i + 1): extract}
                 extractions.append(extract)
-                break
+                # break
             return extractions
 
         elif self.file_type == "image":
@@ -887,7 +889,9 @@ parent_directory = './'
 
 # Create the folders
 for folder_name in folder_names:
+    
     folder_path = os.path.join(parent_directory, folder_name)
+    os.rmdir(folder_name)
     os.makedirs(folder_path, exist_ok=True)
 setattr(__main__, "Classificationmodel", Classificationmodel)
 model = torch.load(r"model_weights_13.pt", map_location=torch.device("cpu"))
