@@ -350,6 +350,7 @@ class TableImagePreprocessing:
         model_path = r"model_weights_13.pt"
         # mod = Classificationmodel(3)
         self.model = model
+        self.count = 0
 
     ### rescaling the image
     def rescaling(self, image):
@@ -507,9 +508,9 @@ class TableImagePreprocessing:
             dividers = get_dividers(tbl_resized, a)
             start_point = [0, 0]
             if a == 0:
-                end_point = [dims[0] - 5 , dims[0] -5 ]
+                end_point = [dims[0], dims[0] ]
             else:
-                end_point = [dims[1] - 5 , dims[1] - 5 ]
+                end_point = [dims[1] , dims[1]]
             for i in dividers:
                 i *= R
                 start_point[a] = int(i)
@@ -558,24 +559,34 @@ class TableImagePreprocessing:
     def detect_horizontal_vertical_lines(self, img):
         img = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
         
+        # last_image_num = 0
+        # existing_images = [image for image in os.listdir("./img/l_img") if image.startswith("line_")]
+        # if existing_images:
+        #     last_image = max(existing_images, key=lambda x: int(x.split("_")[1].split(".")[0]))
+        #     last_image_num = int(last_image.split("_")[1].split(".")[0])
+        # # Increment the image number
+        # new_image_num = last_image_num + 1
+        # new_image_name = f"line_{new_image_num}.jpg"
+        # new_folder_path = f"./img/l_img/line_{new_folder_num}.png"
+        
         last_image_num = 0
-        existing_images = [image for image in os.listdir("./l_img") if image.startswith("line_")]
+        existing_images = [image for image in os.listdir("./img/l_img") if image.startswith("line_")]
         if existing_images:
             last_image = max(existing_images, key=lambda x: int(x.split("_")[1].split(".")[0]))
             last_image_num = int(last_image.split("_")[1].split(".")[0])
         # Increment the image number
         new_image_num = last_image_num + 1
-        new_image_name = f"line_{new_image_num}.jpg"
-        new_folder_path = f"./l_img/line_{new_folder_num}.png"
-        print("lines image saved as -",new_folder_path)
+        new_image_name = f"./img/l_img/line_{new_image_num}.png"
+
+        print("lines image saved as -",new_image_name)
 
         # # Create the new folder if it doesn't exist
         # if not os.path.exists(new_folder_path):
         #     os.makedirs(new_folder_path)
         #     print("created a new folder")
 
-        cv2.imwrite(new_folder_path,img)
-        # image.save(os.path.join(new_folder_path, f"image{num}.png"))
+        cv2.imwrite(new_image_name,img)
+        # # image.save(os.path.join(new_folder_path, f"image{num}.png"))
         # thresholding the image to a binary image
         _, img_bin = cv2.threshold(img, 128, 255, cv2.THRESH_BINARY | cv2.THRESH_OTSU)
         # inverting the image
@@ -745,7 +756,7 @@ class TableImagePreprocessing:
     ### prediction for the classification model
     def table_border_classification_and_identification(self, image_path):
         image = Image.fromarray(image_path.astype("uint8"), "RGB")
-        
+        width, height = image.size
         transform = transforms.Compose(
             [transforms.Resize((224, 224)), transforms.ToTensor()]
         )
@@ -763,6 +774,19 @@ class TableImagePreprocessing:
         }
         result = class_dict[pred.item()]
         print("result",result)
+        
+        if result == "bordered_table":
+            image.save(os.path.join("./img/bordered_table", f"image{self.count}.png"))
+        elif result == "borderless_table":
+            if np.mean(image) < 253 and width > 130 and height> 130:
+                print("borderless_table mean - ",np.mean(image))
+                image.save(os.path.join("./img/borderless_table", f"image{self.count}.png"))
+        elif result == "partially_bordered_table":
+            image.save(os.path.join("./img/partially_bordered_table", f"image{self.count}.png"))
+        else:
+            image.save(os.path.join("./img/others", f"image{self.count}.png"))
+        self.count += 1
+        
         # image.save("result.png")
         
         img = self.rescaling(image_path)
@@ -773,9 +797,13 @@ class TableImagePreprocessing:
         total_pixels = img.shape[0] * img.shape[1]
         white_percentage = (white_pixels / total_pixels) * 100
         # if not a Complete white image, means if has text
-        # print("white_percentage",white_percentage)
-        # if not a Complete white image, means if has text
-        if white_percentage < 99.99:
+        print("white_percentage",white_percentage)
+        # if not a Complete white image, means if has text and width > 941 and height> 641
+        
+        
+        if white_percentage < 99.99 and np.mean(img) < 253 and width > 130 and height> 130:
+            print("mean of the image that is saved - ",np.mean(image))
+            print("width and size ",width,height)
             if result == "partially_bordered_table":
                 img = self.line_removal(img, image_path)
                 img = self.is_clean_image(img)
@@ -812,23 +840,24 @@ class TableExtraction(TableImagePreprocessing, TableDetectionInImage):
         # print(table_img_list)
         extractions = []
         import os
-        last_folder_num = 0
-        existing_folders = [folder for folder in os.listdir("./img") if folder.startswith("images")]
-        if existing_folders:
-            last_folder = max(existing_folders, key=lambda x: int(x.split("_")[1]))
-            last_folder_num = int(last_folder.split("_")[1])
-        # Increment the folder number
-        new_folder_num = last_folder_num + 1
-        new_folder_path = f"./img/images_{new_folder_num}"
+        # last_folder_num = 0
+        # existing_folders = [folder for folder in os.listdir("./img") if folder.startswith("images")]
+        # if existing_folders:
+        #     last_folder = max(existing_folders, key=lambda x: int(x.split("_")[1]))
+        #     last_folder_num = int(last_folder.split("_")[1])
+        # # Increment the folder number
+        # new_folder_num = last_folder_num + 1
+        # new_folder_path = f"./img/images_{new_folder_num}"
 
-        # Create the new folder if it doesn't exist
-        if not os.path.exists(new_folder_path):
-            os.makedirs(new_folder_path)
-            print("created a new folder")
+        # # Create the new folder if it doesn't exist
+        # if not os.path.exists(new_folder_path):
+        #     os.makedirs(new_folder_path)
+        #     print("created a new folder")
         for num, table_img in enumerate(table_img_list):  
             image = Image.fromarray(table_img)
             # Save the image with an iterative name
-            image.save(os.path.join(new_folder_path, f"image{num}.png"))
+            
+            # image.save(os.path.join(new_folder_path, f"image{num}.png"))
             extraction = self.table_border_classification_and_identification(table_img)
             # if len(extraction) != 0:#
             if extraction is not None:
@@ -882,21 +911,23 @@ import __main__
 import os
 
 # Specify the folder names
-folder_names = ['img', 'e_img','l_img']
+# folder_names = ['img', 'e_img','l_img']
+folder_names = ['bordered_table','borderless_table','partially_bordered_table','others','l_img']
+
 
 # Define the parent directory path where the folders will be created
-parent_directory = './'
-
+parent_directory = './img'
+import shutil
 # Create the folders
 for folder_name in folder_names:
-    
     folder_path = os.path.join(parent_directory, folder_name)
-    os.rmdir(folder_name)
+    # os.remove(folder_name)
+    # shutil.rmtree(folder_name)
     os.makedirs(folder_path, exist_ok=True)
 setattr(__main__, "Classificationmodel", Classificationmodel)
 model = torch.load(r"model_weights_13.pt", map_location=torch.device("cpu"))
 # obj = TableExtraction(r"C:\Users\Admin\Downloads\table_ocr_project\15032-5280-FullBook.pdf")
-obj = TableExtraction(r"OCR_SANTOSH/291169012_suoypoa1rvi5puntbojalx12.pdf","291169012_suoypoa1rvi5puntbojalx12.pdf")
+obj = TableExtraction(r"OCR_SANTOSH/291169013_suoypoa1rvi5puntbojalx12.pdf","291169013_suoypoa1rvi5puntbojalx12.pdf")
 result = obj.extract_table()
 print("RESULT")
 print(result)
