@@ -274,8 +274,8 @@ def load_train_objs(path,bch_size,EPOCHS,LEARNING_RATE):
     Data_csv = pd.read_csv(path)
     sample_df = Data_csv.groupby("level").apply(lambda x: x.sample(1))
     # sample_df = pd.concat([
-    #     Data_csv[Data_csv['level'] == 'Level 1'].sample(85),
-    #     Data_csv[Data_csv['level'] == 'Level 2'].sample(85),
+    #     Data_csv[Data_csv['level'] == 'Level 1'].sample(100),
+    #     Data_csv[Data_csv['level'] == 'Level 2'].sample(90),
     #     Data_csv[Data_csv['level'] == 'Level 3'].sample(60)
     # ]).reset_index(drop=True)
     sample_df["filename"].to_csv("ritesh_manchikanti/Bigbird/ddp/selected_samples.csv", index=False)
@@ -364,8 +364,8 @@ def main(rank, world_size,EPOCHS, save_every,path,LEARNING_RATE,bch_size,model_s
     print("The length of the training dataset is ",len(train_dataset))
     trainer = Trainer(model,tokenizer, train_loader,test_loader,train_dataset,test_dataset, optimizer,scheduler, rank, save_every,EPOCHS,LEARNING_RATE,bch_size,model_save_path)
     trainer.train(EPOCHS)
-    # trainer.plot_loss()
-    # trainer.show_classification_report()
+    trainer.plot_loss()
+    trainer.show_classification_report()
     print("the jobs are done ending all the processes.")
     # destroy_process_group()
     kill_all_gpu_pids()
@@ -420,13 +420,13 @@ if __name__ == "__main__":
     # Add command-line arguments
     parser.add_argument('--mode', type=str, choices=['train', 'test'], help='Mode: train or test')
     # Add the rest of the arguments specific to train or test mode
-    parser.add_argument('--total_epochs', type=int, default=2, help='Total number of epochs')
+    parser.add_argument('--total_epochs', type=int, default=5, help='Total number of epochs')
     parser.add_argument('--save_every', type=int, default=1, help='Save model every N epochs')
     parser.add_argument('--batch_size', type=int, default=5, help='Batch size')
     parser.add_argument('--lr_rate', type=float, default=0.0000025, help='Learning rate')
-    parser.add_argument('--path', type=str, default='/home/ubuntu/cat_poc/llms/final_data.csv', help='Data file path')
-    parser.add_argument('--model_save_path', type=str, default='/home/ubuntu/ritesh_manchikanti/Bigbird/ddp/', help='Model save path')
-    parser.add_argument('--tokenizer_path', type=str, default='/home/ubuntu/ritesh_manchikanti/Bigbird/ddp/savedmodel_multi_gpu_ddp', help='Tokenizer path')
+    parser.add_argument('--path', type=str, default='/home/ubuntu/ritesh_manchikanti/final_data.csv', help='Data file path')
+    parser.add_argument('--model_save_path', type=str, default='/home/ubuntu/ritesh_manchikanti/Bigbird/ddp_2/', help='Model save path')
+    parser.add_argument('--tokenizer_path', type=str, default='/home/ubuntu/ritesh_manchikanti/Bigbird/ddp_2/savedmodel_multi_gpu_ddp', help='Tokenizer path')
     parser.add_argument('--file_path', type=str, default='/home/ubuntu/ritesh_manchikanti/Bigbird/15031-4983-FullBook.docx', help='File path')
 
     # Parse the command-line arguments
