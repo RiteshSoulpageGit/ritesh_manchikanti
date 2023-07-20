@@ -559,16 +559,6 @@ class TableImagePreprocessing:
     def detect_horizontal_vertical_lines(self, img):
         img = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
         
-        # last_image_num = 0
-        # existing_images = [image for image in os.listdir("./img/l_img") if image.startswith("line_")]
-        # if existing_images:
-        #     last_image = max(existing_images, key=lambda x: int(x.split("_")[1].split(".")[0]))
-        #     last_image_num = int(last_image.split("_")[1].split(".")[0])
-        # # Increment the image number
-        # new_image_num = last_image_num + 1
-        # new_image_name = f"line_{new_image_num}.jpg"
-        # new_folder_path = f"./img/l_img/line_{new_folder_num}.png"
-        
         last_image_num = 0
         existing_images = [image for image in os.listdir("./img/l_img") if image.startswith("line_")]
         if existing_images:
@@ -578,14 +568,14 @@ class TableImagePreprocessing:
         new_image_num = last_image_num + 1
         new_image_name = f"./img/l_img/line_{new_image_num}.png"
 
-        print("lines image saved as -",new_image_name)
+        # print("lines image saved as -",new_image_name)
 
         # # Create the new folder if it doesn't exist
         # if not os.path.exists(new_folder_path):
         #     os.makedirs(new_folder_path)
         #     print("created a new folder")
 
-        cv2.imwrite(new_image_name,img)
+        # cv2.imwrite(new_image_name,img)
         # # image.save(os.path.join(new_folder_path, f"image{num}.png"))
         # thresholding the image to a binary image
         _, img_bin = cv2.threshold(img, 128, 255, cv2.THRESH_BINARY | cv2.THRESH_OTSU)
@@ -718,7 +708,7 @@ class TableImagePreprocessing:
                         # dilation = cv2.dilate(resizing, kernel, iterations=1)
                         erosion = cv2.erode(resizing, kernel, iterations=1)
                         
-                        cv2.imwrite(f"./e_img/er_img{sum}.png", erosion)
+                        # cv2.imwrite(f"./e_img/er_img{sum}.png", erosion)
                         sum += 1 
                         out = pytesseract.image_to_string(erosion, config="--psm 6")
                         if len(out) == 0:
@@ -773,18 +763,18 @@ class TableImagePreprocessing:
             2: "others"
         }
         result = class_dict[pred.item()]
-        print("result",result)
+        # print("result",result)
         
-        if result == "bordered_table":
-            image.save(os.path.join("./img/bordered_table", f"image{self.count}.png"))
-        elif result == "borderless_table":
-            if np.mean(image) < 253 and width > 130 and height> 130:
-                print("borderless_table mean - ",np.mean(image))
-                image.save(os.path.join("./img/borderless_table", f"image{self.count}.png"))
-        elif result == "partially_bordered_table":
-            image.save(os.path.join("./img/partially_bordered_table", f"image{self.count}.png"))
-        else:
-            image.save(os.path.join("./img/others", f"image{self.count}.png"))
+        # if result == "bordered_table":
+        #     image.save(os.path.join("./img/bordered_table", f"image{self.count}.png"))
+        # elif result == "borderless_table":
+        #     if np.mean(image) < 253 and width > 130 and height> 130:
+        #         print("borderless_table mean - ",np.mean(image))
+        #         image.save(os.path.join("./img/borderless_table", f"image{self.count}.png"))
+        # elif result == "partially_bordered_table":
+        #     image.save(os.path.join("./img/partially_bordered_table", f"image{self.count}.png"))
+        # else:
+        #     image.save(os.path.join("./img/others", f"image{self.count}.png"))
         self.count += 1
         
         # image.save("result.png")
@@ -797,13 +787,13 @@ class TableImagePreprocessing:
         total_pixels = img.shape[0] * img.shape[1]
         white_percentage = (white_pixels / total_pixels) * 100
         # if not a Complete white image, means if has text
-        print("white_percentage",white_percentage)
+        # print("white_percentage",white_percentage)
         # if not a Complete white image, means if has text and width > 941 and height> 641
         
         
         if white_percentage < 99.99 and np.mean(img) < 253 and width > 130 and height> 130:
-            print("mean of the image that is saved - ",np.mean(image))
-            print("width and size ",width,height)
+            # print("mean of the image that is saved - ",np.mean(image))
+            # print("width and size ",width,height)
             if result == "partially_bordered_table":
                 img = self.line_removal(img, image_path)
                 img = self.is_clean_image(img)
@@ -836,7 +826,7 @@ class TableExtraction(TableImagePreprocessing, TableDetectionInImage):
 
     def get_table_extractions(self, image):
         table_img_list = self.detected_table_images(image)
-        print(len(table_img_list))
+        # print(len(table_img_list))
         # print(table_img_list)
         extractions = []
         import os
@@ -916,14 +906,14 @@ folder_names = ['bordered_table','borderless_table','partially_bordered_table','
 
 
 # Define the parent directory path where the folders will be created
-parent_directory = './img'
-import shutil
-# Create the folders
-for folder_name in folder_names:
-    folder_path = os.path.join(parent_directory, folder_name)
-    # os.remove(folder_name)
-    # shutil.rmtree(folder_name)
-    os.makedirs(folder_path, exist_ok=True)
+# parent_directory = './img'
+# import shutil
+# # Create the folders
+# for folder_name in folder_names:
+#     folder_path = os.path.join(parent_directory, folder_name)
+#     # os.remove(folder_name)
+#     # shutil.rmtree(folder_name)
+#     os.makedirs(folder_path, exist_ok=True)
 setattr(__main__, "Classificationmodel", Classificationmodel)
 model = torch.load(r"model_weights_13.pt", map_location=torch.device("cpu"))
 # obj = TableExtraction(r"C:\Users\Admin\Downloads\table_ocr_project\15032-5280-FullBook.pdf")

@@ -6,6 +6,11 @@ import pandas as pd
 import torch
 from transformers import BigBirdTokenizer,BigBirdModel,BigBirdForSequenceClassification
 from transformers import AutoTokenizer, AutoModelForSequenceClassification
+#longfomer import statements
+from transformers import AutoTokenizer, LongformerForSequenceClassification
+from transformers import LongformerTokenizer
+
+
 from torch import Tensor
 import numpy as np
 from collections import Counter
@@ -279,11 +284,22 @@ def load_train_objs(path,bch_size,EPOCHS,LEARNING_RATE):
         Data_csv[Data_csv['level'] == 'Level 3'].sample(60)
     ]).reset_index(drop=True)
     
-    sample_df["filename"].to_csv("/home/ubuntu/ritesh_manchikanti/Bigbird/ddp_2/selected_samples.csv", index=False)
+    sample_df["filename"].to_csv("/home/ubuntu/ritesh_manchikanti/longformer/ddp/selected_samples.csv", index=False)
     
-    tokenizer = BigBirdTokenizer.from_pretrained('google/bigbird-roberta-base')
-    model = BigBirdForSequenceClassification.from_pretrained('google/bigbird-roberta-base', 
-                                                        num_labels=3)
+    # tokenizer = BigBirdTokenizer.from_pretrained('google/bigbird-roberta-base')
+    # model = BigBirdForSequenceClassification.from_pretrained('google/bigbird-roberta-base', 
+    #                                                     num_labels=3)
+    tokenizer = LongformerTokenizer.from_pretrained("allenai/longformer-base-4096")
+    model = LongformerForSequenceClassification.from_pretrained("allenai/longformer-base-4096",num_labels=3)
+
+    # # Define the model repo
+    # model_name = "allenai/longformer-base-4096" 
+
+
+    # # Download pytorch model
+    # model = AutoModel.from_pretrained(model_name)
+    # tokenizer = AutoTokenizer.from_pretrained(model_name)
+
     total_chunks,total_att_mask,total_labels = data_prep(sample_df,tokenizer)
     dataset =  CustomDataset(total_chunks,total_att_mask,total_labels)
     train_ratio = 0.8  # 80% for training
@@ -421,14 +437,14 @@ if __name__ == "__main__":
     # Add command-line arguments
     parser.add_argument('--mode', type=str, choices=['train', 'test'], help='Mode: train or test')
     # Add the rest of the arguments specific to train or test mode
-    parser.add_argument('--total_epochs', type=int, default=5, help='Total number of epochs')
+    parser.add_argument('--total_epochs', type=int, default=2, help='Total number of epochs')
     parser.add_argument('--save_every', type=int, default=1, help='Save model every N epochs')
     parser.add_argument('--batch_size', type=int, default=5, help='Batch size')
     parser.add_argument('--lr_rate', type=float, default=0.0000025, help='Learning rate')
     parser.add_argument('--path', type=str, default='/home/ubuntu/ritesh_manchikanti/final_data.csv', help='Data file path')
-    parser.add_argument('--model_save_path', type=str, default='/home/ubuntu/ritesh_manchikanti/Bigbird/ddp_2/', help='Model save path')
-    parser.add_argument('--tokenizer_path', type=str, default='/home/ubuntu/ritesh_manchikanti/Bigbird/ddp_2/savedmodel_multi_gpu_ddp', help='Tokenizer path')
-    parser.add_argument('--file_path', type=str, default='/home/ubuntu/ritesh_manchikanti/Bigbird/15031-4983-FullBook.docx', help='File path')
+    parser.add_argument('--model_save_path', type=str, default='/home/ubuntu/ritesh_manchikanti/longformer/ddp/', help='Model save path')
+    parser.add_argument('--tokenizer_path', type=str, default='/home/ubuntu/ritesh_manchikanti/longformer/ddp/savedmodel_multi_gpu_ddp', help='Tokenizer path')
+    parser.add_argument('--file_path', type=str, default='/home/ubuntu/ritesh_manchikanti/longformer/15031-4983-FullBook.docx', help='File path')
 
     # Parse the command-line arguments
     args = parser.parse_args()
