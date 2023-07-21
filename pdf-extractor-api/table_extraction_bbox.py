@@ -904,14 +904,14 @@ import os
 # folder_names = ['img', 'e_img','l_img']
 folder_names = ['bordered_table','borderless_table','partially_bordered_table','others','l_img']
 # Define the parent directory path where the folders will be created
-# parent_directory = './img'
-# import shutil
-# # Create the folders
-# for folder_name in folder_names:
-#     folder_path = os.path.join(parent_directory, folder_name)
-#     # os.remove(folder_name)
-#     # shutil.rmtree(folder_name)
-#     os.makedirs(folder_path, exist_ok=True)
+parent_directory = './img'
+import shutil
+# Create the folders
+for folder_name in folder_names:
+    folder_path = os.path.join(parent_directory, folder_name)
+    # os.remove(folder_name)
+    # shutil.rmtree(folder_name)
+    os.makedirs(folder_path, exist_ok=True)
 setattr(__main__, "Classificationmodel", Classificationmodel)
 model = torch.load(r"model_weights_13.pt", map_location=torch.device("cpu"))
 # obj = TableExtraction(r"C:\Users\Admin\Downloads\table_ocr_project\15032-5280-FullBook.pdf")
